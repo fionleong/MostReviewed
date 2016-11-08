@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.naghmeh.mostreviewed.homeController"
+    android:orientation="vertical"
+    android:layout_weight="1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Most Reviewed"
+        android:id="@+id/header"
+        android:layout_gravity="center_horizontal"
+        android:textStyle="bold"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Cuisine:"
+        android:id="@+id/cuisineLabel"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:layout_weight="1"/>
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingBar"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Location:"
+        android:id="@+id/locationLabel"
+        android:layout_weight="1"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:layout_weight="1"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/searchButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="search" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Surprise Me!"
+        android:id="@+id/surpriseButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:onClick="surpriseMe" />
+
+</LinearLayout>
