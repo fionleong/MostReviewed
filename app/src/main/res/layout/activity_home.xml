@@ -32,7 +32,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText"
+        android:id="@+id/searchTerm"
         android:layout_weight="1"/>
 
     <RatingBar
@@ -53,7 +53,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editText2"
+        android:id="@+id/searchLocation"
         android:layout_weight="1"/>
 
     <Button

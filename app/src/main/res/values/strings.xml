@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MostReviewed</string>
+    <string name="consumer_key">YpVc7psUggwMieclzg4eDQ</string>
+    <string name="consumer_secret">p6WsxBWpkztwFFycRCcMmZ2RGG8</string>
+    <string name="token">D8-xxDJUdfWQiQqMlnXj4NYw3QDK8gcC</string>
+    <string name="token_secret">t8DsazwnGelDlwlZ_8sQ-E3Samg</string>
 </resources>
