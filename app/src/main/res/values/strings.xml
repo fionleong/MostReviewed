@@ -4,4 +4,10 @@
     <string name="consumer_secret">p6WsxBWpkztwFFycRCcMmZ2RGG8</string>
     <string name="token">D8-xxDJUdfWQiQqMlnXj4NYw3QDK8gcC</string>
     <string name="token_secret">t8DsazwnGelDlwlZ_8sQ-E3Samg</string>
+
+    <string name="title_activity_main">MainActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_restaurant">RestaurantActivity</string>
 </resources>

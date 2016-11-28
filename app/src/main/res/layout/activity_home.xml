@@ -1,78 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/yelpRed"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.naghmeh.mostreviewed.homeController"
-    android:orientation="vertical"
-    android:layout_weight="1">
+    tools:context="com.example.naghmeh.mostreviewed.homeController">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Most Reviewed"
-        android:id="@+id/header"
-        android:layout_gravity="center_horizontal"
-        android:textStyle="bold"
-        android:layout_weight="1"/>
+        android:layout_alignParentStart="true"
+        android:adjustViewBounds="false"
+        android:alpha="1"
+        android:contentDescription="MostReviewedLogo"
+        android:cropToPadding="false"
+        android:scaleType="fitStart"
+        app:srcCompat="@drawable/topyelp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cuisine:"
-        android:id="@+id/cuisineLabel"
-        android:layout_weight="1"/>
-
-    <EditText
+    <Button
+        android:id="@+id/surpriseButton"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="28dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/rounded_btn_grey"
+        android:onClick="surpriseMe"
+        android:text="SURPRISE ME"
+        android:textColor="@color/darkRed" />
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/surpriseButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="0"
+        android:background="@drawable/rounded_btn"
+        android:onClick="search"
+        android:text="Search"
+        android:textColor="#FFFFFF" />
+
+    <MultiAutoCompleteTextView
         android:id="@+id/searchTerm"
-        android:layout_weight="1"/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/searchLocation"
+        android:layout_alignStart="@+id/cuisineLabel"
+        android:layout_below="@+id/cuisineLabel"
+        android:layout_marginTop="8dp"
+        android:layout_weight="0.13"
+        android:background="@drawable/rounded_rec"
+        android:textColor="#000000"
+        android:textCursorDrawable="@color/darkRed" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ratingBar"
+        android:layout_alignStart="@+id/cuisineLabel"
+        android:layout_weight="0.13"
+        android:text="Rating:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cuisineLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/searchLocation"
+        android:layout_below="@+id/searchLocation"
+        android:layout_marginTop="12dp"
+        android:layout_weight="0.13"
+        android:text="Cuisine:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <RatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/ratingBar"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location:"
-        android:id="@+id/locationLabel"
-        android:layout_weight="1"/>
+        android:layout_above="@+id/searchButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="3"
+        android:theme="@style/RatingBar" />
 
-    <EditText
+    <MultiAutoCompleteTextView
+        android:id="@+id/searchLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/searchLocation"
-        android:layout_weight="1"/>
+        android:layout_alignEnd="@+id/searchButton"
+        android:layout_alignStart="@+id/searchButton"
+        android:layout_below="@+id/locationLabel"
+        android:layout_marginTop="9dp"
+        android:layout_weight="0.12"
+        android:background="@drawable/rounded_rec"
+        android:textColor="#000000"
+        android:textCursorDrawable="@color/darkRed" />
 
-    <Button
+    <TextView
+        android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/searchButton"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        android:onClick="search" />
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/searchLocation"
+        android:layout_marginTop="126dp"
+        android:layout_weight="0.19"
+        android:text="Location:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Surprise Me!"
-        android:id="@+id/surpriseButton"
-        android:layout_gravity="center_horizontal"
-        android:layout_weight="1"
-        android:onClick="surpriseMe" />
 
-</LinearLayout>
+
+</RelativeLayout>
