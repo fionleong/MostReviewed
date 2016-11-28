@@ -1,5 +1,6 @@
 package com.example.naghmeh.mostreviewed;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -71,6 +72,9 @@ public class homeController extends AppCompatActivity {
     }
 
     public void surpriseMe(View view) {
+        // Testing if the other pages are working correctly
+        Intent intent = new Intent(homeController.this, SearchActivity.class);
+        startActivity(intent);
 
     }
 }

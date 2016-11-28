@@ -4,131 +4,131 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="@color/yelpRed"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:background="@color/yelpRed"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.naghmeh.mostreviewed.homeController"
-    android:orientation="vertical"
-    android:layout_weight="1">
+    tools:context="com.example.naghmeh.mostreviewed.homeController">
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/topyelp"
         android:layout_alignParentStart="true"
-        android:id="@+id/imageView2"
-        android:cropToPadding="false"
         android:adjustViewBounds="false"
+        android:alpha="1"
+        android:contentDescription="MostReviewedLogo"
+        android:cropToPadding="false"
         android:scaleType="fitStart"
-        android:alpha=".9"
-        android:contentDescription="MostReviewedLogo" />
+        app:srcCompat="@drawable/topyelp" />
 
     <Button
+        android:id="@+id/surpriseButton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/surpriseButton"
-        android:layout_gravity="center_horizontal"
-        android:onClick="surpriseMe"
-        android:textColor="@color/darkRed"
-        android:background="@drawable/rounded_btn_grey"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="28dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="SURPRISE ME" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Search"
-        android:id="@+id/searchButton"
-        android:background="@drawable/rounded_btn"
-        android:textColor="#FFFFFF"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0"
-        android:onClick="search"
+        android:layout_marginBottom="28dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginBottom="21dp"
-        android:layout_above="@+id/surpriseButton" />
+        android:background="@drawable/rounded_btn_grey"
+        android:onClick="surpriseMe"
+        android:text="SURPRISE ME"
+        android:textColor="@color/darkRed" />
 
-    <MultiAutoCompleteTextView
+    <Button
+        android:id="@+id/searchButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rec"
-        android:textCursorDrawable="@null"
+        android:layout_above="@+id/surpriseButton"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="21dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_weight="0"
+        android:background="@drawable/rounded_btn"
+        android:onClick="search"
+        android:text="Search"
+        android:textColor="#FFFFFF" />
+
+    <MultiAutoCompleteTextView
         android:id="@+id/searchTerm"
-        android:layout_weight="0.13"
-        android:layout_marginTop="8dp"
-        android:layout_below="@+id/cuisineLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/searchLocation"
         android:layout_alignStart="@+id/cuisineLabel"
-        android:layout_alignEnd="@+id/searchLocation" />
+        android:layout_below="@+id/cuisineLabel"
+        android:layout_marginTop="8dp"
+        android:layout_weight="0.13"
+        android:background="@drawable/rounded_rec"
+        android:textCursorDrawable="@null" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Rating:"
-        android:textStyle="bold"
         android:id="@+id/textView"
-        android:layout_weight="0.13"
-        android:layout_above="@+id/ratingBar"
-        android:layout_alignStart="@+id/cuisineLabel" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Cuisine:"
-        android:id="@+id/cuisineLabel"
+        android:layout_above="@+id/ratingBar"
+        android:layout_alignStart="@+id/cuisineLabel"
         android:layout_weight="0.13"
-        android:textStyle="bold"
-        android:layout_marginTop="12dp"
+        android:text="Rating:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cuisineLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/searchLocation"
         android:layout_below="@+id/searchLocation"
-        android:layout_alignStart="@+id/searchLocation" />
+        android:layout_marginTop="12dp"
+        android:layout_weight="0.13"
+        android:text="Cuisine:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
     <RatingBar
+        android:id="@+id/ratingBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/ratingBar"
-        android:theme="@style/RatingBar"
-        android:layout_marginBottom="16dp"
-        android:numStars="5"
-        android:isIndicator="false"
         android:layout_above="@+id/searchButton"
         android:layout_centerHorizontal="true"
-        android:rating="3" />
+        android:layout_marginBottom="16dp"
+        android:isIndicator="false"
+        android:numStars="5"
+        android:rating="3"
+        android:theme="@style/RatingBar" />
 
     <MultiAutoCompleteTextView
+        android:id="@+id/searchLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/rounded_rec"
-        android:textCursorDrawable="@null"
-        android:id="@+id/searchLocation"
-        android:layout_weight="0.12"
-        android:layout_marginTop="9dp"
-        android:layout_below="@+id/locationLabel"
+        android:layout_alignEnd="@+id/searchButton"
         android:layout_alignStart="@+id/searchButton"
-        android:layout_alignEnd="@+id/searchButton" />
+        android:layout_below="@+id/locationLabel"
+        android:layout_marginTop="9dp"
+        android:layout_weight="0.12"
+        android:background="@drawable/rounded_rec"
+        android:textCursorDrawable="@null" />
 
     <TextView
+        android:id="@+id/locationLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Location:"
-        android:id="@+id/locationLabel"
-        android:textColor="#000000"
-        android:textStyle="bold"
-        android:layout_weight="0.19"
-        android:layout_marginTop="126dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/searchLocation" />
+        android:layout_alignStart="@+id/searchLocation"
+        android:layout_marginTop="126dp"
+        android:layout_weight="0.19"
+        android:text="Location:"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 
 
 
