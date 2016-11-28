@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.MultiAutoCompleteTextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,10 +26,10 @@ public class homeController extends AppCompatActivity {
     }
 
     public void search(View view) {
-        EditText term = (EditText) findViewById(R.id.searchTerm);
+        MultiAutoCompleteTextView term = (MultiAutoCompleteTextView) findViewById(R.id.searchTerm);
         final String searchTerm= term.getText().toString();
 
-        EditText location = (EditText) findViewById(R.id.searchLocation);
+        MultiAutoCompleteTextView location = (MultiAutoCompleteTextView) findViewById(R.id.searchLocation);
         final String searchLocation= location.getText().toString();
 
         Log.i("test", searchTerm+" , "+searchLocation);
@@ -40,7 +41,7 @@ public class homeController extends AppCompatActivity {
                 try {
                     return processJson(businesses);
                 } catch (JSONException e) {
-                    return Collections.<Business>emptyList();
+                    return Collections.emptyList();
                 }
             }
 
