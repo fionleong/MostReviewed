@@ -5,6 +5,8 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -17,8 +19,11 @@ import java.util.List;
 
 public class SearchController extends AppCompatActivity {
 
+    private Button bButton;
     String searchTerm;
     String searchLocation;
+    protected double mLatitude;
+    protected double mLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +32,8 @@ public class SearchController extends AppCompatActivity {
         Intent intent = getIntent();
         searchTerm = intent.getExtras().getString("searchTerm");
         searchLocation = intent.getExtras().getString("searchLocation");
+        mLatitude = intent.getExtras().getDouble("mLatitude");
+        mLongitude = intent.getExtras().getDouble("mLongitude");
         Toast.makeText(this, "Welcome " + searchTerm + "!" + searchLocation, Toast.LENGTH_SHORT).show();
         new AsyncTask<Void, Void, List<Business>>() {
             @Override
@@ -47,6 +54,20 @@ public class SearchController extends AppCompatActivity {
 
             }
         }.execute();
+        bButton = (Button) findViewById(R.id.button);
+
+        bButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SearchController.this, RestaurantActivity.class);
+                intent.putExtra("searchTerm", searchTerm);
+                intent.putExtra("mLatitude", mLatitude);
+                intent.putExtra("mLongitude", mLongitude);
+                intent.putExtra("searchLocation", searchLocation);
+                intent.putExtra("isSurprised", false);
+                startActivity(intent);
+            }
+        });
     }
 
     List<Business> processJson(String jsonStuff) throws JSONException {
