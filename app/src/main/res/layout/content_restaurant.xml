@@ -25,7 +25,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/restaurantName"
-            android:numStars="5" />
+            android:numStars="5"
+            android:rating="4"
+            android:theme="@style/RatingBar" />
 
         <TextView
             android:id="@+id/miles"
@@ -140,7 +142,9 @@
             android:layout_alignStart="@+id/textView10"
             android:layout_below="@+id/divider4"
             android:layout_marginTop="12dp"
-            android:numStars="5" />
+            android:numStars="5"
+            android:rating="1"
+            android:theme="@style/RatingBar" />
 
         <RatingBar
             android:id="@+id/miniRatingBar2"
@@ -150,7 +154,9 @@
             android:layout_alignStart="@+id/miniRatingBar1"
             android:layout_below="@+id/divider5"
             android:layout_marginTop="11dp"
-            android:numStars="5" />
+            android:numStars="5"
+            android:rating="4"
+            android:theme="@style/RatingBar" />
 
         <TextView
             android:id="@+id/reviewDate1"
