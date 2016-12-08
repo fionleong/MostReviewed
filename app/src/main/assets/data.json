@@ -123,6 +123,165 @@
             },
             "url": "https://www.yelp.com/biz/la-victoria-taqueria-san-jose-2?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
             "distance": 158.0146089598
+        },
+        {
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.35413,
+                "longitude": -121.85363
+            },
+            "id": "la-costa-san-jose-2",
+            "review_count": 703,
+            "phone": "+14089371010",
+            "price": "$",
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/F28rK6EBujCita71Y8F8Ow/o.jpg",
+            "is_closed": false,
+            "name": "La Costa",
+            "location": {
+                "country": "US",
+                "address1": "1805 Alum Rock Ave",
+                "zip_code": "95116",
+                "city": "San Jose",
+                "address2": null,
+                "state": "CA",
+                "address3": ""
+            },
+            "url": "https://www.yelp.com/biz/la-costa-san-jose-2?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
+            "distance": 3591.96480366
+        },
+        {
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.3367519,
+                "longitude": -121.8890629
+            },
+            "id": "muchos-restaurant-and-bar-san-jose-2",
+            "review_count": 335,
+            "phone": "+14082770333",
+            "price": "$",
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                },
+                {
+                    "alias": "bars",
+                    "title": "Bars"
+                }
+            ],
+            "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/xNjb1grY5h4CJy9gheLZ-A/o.jpg",
+            "is_closed": false,
+            "name": "Muchos Restaurant and Bar",
+            "location": {
+                "country": "US",
+                "address1": "72 E Santa Clara St",
+                "zip_code": "95113",
+                "city": "San Jose",
+                "address2": "",
+                "state": "CA",
+                "address3": ""
+            },
+            "url": "https://www.yelp.com/biz/muchos-restaurant-and-bar-san-jose-2?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
+            "distance": 777.066439386
+        },
+        {
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.32212,
+                "longitude": -121.88502
+            },
+            "id": "el-grullo-taqueria-y-mariscos-san-jose",
+            "review_count": 60,
+            "phone": "+14082801447",
+            "price": "$",
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Nhe-_cQYP220VuR8lRW0CA/o.jpg",
+            "is_closed": false,
+            "name": "El Grullo Taqueria Y Mariscos",
+            "location": {
+                "country": "US",
+                "address1": "797 S Almaden Ave",
+                "zip_code": "95110",
+                "city": "San Jose",
+                "address2": "",
+                "state": "CA",
+                "address3": ""
+            },
+            "url": "https://www.yelp.com/biz/el-grullo-taqueria-y-mariscos-san-jose?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
+            "distance": 1068.872611922
+        },
+        {
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.3240685,
+                "longitude": -121.8858498
+            },
+            "id": "metro-balderas-1-san-jose",
+            "review_count": 161,
+            "phone": "+14082954078",
+            "price": "$",
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/Zw4eDMjgfW-YQh1PZkHotA/o.jpg",
+            "is_closed": false,
+            "name": "Metro Balderas 1",
+            "location": {
+                "country": "US",
+                "address1": "688 S Almaden Ave",
+                "zip_code": "95110",
+                "city": "San Jose",
+                "address2": "",
+                "state": "CA",
+                "address3": ""
+            },
+            "url": "https://www.yelp.com/biz/metro-balderas-1-san-jose?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
+            "distance": 883.9862092462
+        },
+        {
+            "rating": 4,
+            "coordinates": {
+                "latitude": 37.3330684770691,
+                "longitude": -121.914127461814
+            },
+            "id": "zona-rosa-san-jose",
+            "review_count": 555,
+            "phone": "+14082751411",
+            "price": "$$",
+            "categories": [
+                {
+                    "alias": "mexican",
+                    "title": "Mexican"
+                }
+            ],
+            "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/ofe9qANyJryjx6N91IojLA/o.jpg",
+            "is_closed": false,
+            "name": "Zona Rosa",
+            "location": {
+                "country": "US",
+                "address1": "1411 The Alameda",
+                "zip_code": "95126",
+                "city": "San Jose",
+                "address2": "",
+                "state": "CA",
+                "address3": ""
+            },
+            "url": "https://www.yelp.com/biz/zona-rosa-san-jose?adjust_creative=fNujAxN1dz_J8KNL9RgVzQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=fNujAxN1dz_J8KNL9RgVzQ",
+            "distance": 2754.2322008319998
         }
 ],
     "total": 2019

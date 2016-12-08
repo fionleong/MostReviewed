@@ -205,6 +205,8 @@ public class Business {
                 JSONObject busJson = businessArray.getJSONObject(i);
 
                 business.name = busJson.optString("name");
+                business.image_url = busJson.optString("image_url");
+                business.rating = busJson.optString("rating");
                 //business.phone = busJson.optString("phone");
                 business.review_count = busJson.optString("review_count");
 

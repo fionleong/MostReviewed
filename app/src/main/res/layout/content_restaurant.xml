@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/restaurantName"
+            android:theme="@style/RatingBar"
             android:numStars="5" />
 
         <TextView
@@ -115,15 +116,6 @@
             android:layout_marginTop="6dp"
             android:text="Business Hours" />
 
-        <TextView
-            android:id="@+id/numReviews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/hours"
-            android:layout_alignBottom="@+id/hours"
-            android:layout_alignParentEnd="true"
-            android:text="Num of reviews" />
-
         <View
             android:id="@+id/divider5"
             android:layout_width="match_parent"
@@ -140,6 +132,7 @@
             android:layout_alignStart="@+id/textView10"
             android:layout_below="@+id/divider4"
             android:layout_marginTop="12dp"
+            android:theme="@style/RatingBar"
             android:numStars="5" />
 
         <RatingBar
@@ -150,6 +143,7 @@
             android:layout_alignStart="@+id/miniRatingBar1"
             android:layout_below="@+id/divider5"
             android:layout_marginTop="11dp"
+            android:theme="@style/RatingBar"
             android:numStars="5" />
 
         <TextView
@@ -227,6 +221,15 @@
             android:layout_below="@+id/miniRatingBar2"
             android:layout_marginTop="11dp"
             android:text="The first 30 characters of the review" />
+
+        <TextView
+            android:id="@+id/numReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Num of reviews"
+            android:layout_alignBaseline="@+id/restaurantHours"
+            android:layout_alignBottom="@+id/restaurantHours"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
 

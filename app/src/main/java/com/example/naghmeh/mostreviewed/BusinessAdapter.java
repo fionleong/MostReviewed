@@ -53,13 +53,13 @@ public class BusinessAdapter extends BaseAdapter {
             convertView = mInflater.inflate(R.layout.listview_row, parent, false);
 
             holder = new ViewHolder();
-//            holder.searchImg = (ImageView) convertView.findViewById(R.id.searchImg);
+            holder.searchImg = (ImageView) convertView.findViewById(R.id.searchImg);
             holder.searchNameTextView = (TextView) convertView.findViewById(R.id.searchName);
 //            holder.searchAddressTextView = (TextView) convertView.findViewById(R.id.searchAddress);
 //            holder.searchMilesTextView = (TextView) convertView.findViewById(R.id.searchMiles);
 //            holder.searchDollarSignTextView = (TextView) convertView.findViewById(R.id.searchDollarSign);
             holder.searchNumReviewTextView = (TextView) convertView.findViewById(R.id.searchNumReviews);
-//            holder.searchRatingBar = (RatingBar) convertView.findViewById(R.id.searchRatingBar);
+            holder.searchRatingBar = (RatingBar) convertView.findViewById(R.id.searchRatingBar);
 
             convertView.setTag(holder);
         } else {
@@ -71,8 +71,8 @@ public class BusinessAdapter extends BaseAdapter {
 //        TextView searchMilesTextView = holder.searchMilesTextView;
 //        TextView searchDollarSignTextView = holder.searchDollarSignTextView;
         TextView searchNumReviewTextView = holder.searchNumReviewTextView;
-//        ImageView searchImg = holder.searchImg;
-//        RatingBar searchRatingBar = holder.searchRatingBar;
+        ImageView searchImg = holder.searchImg;
+        RatingBar searchRatingBar = holder.searchRatingBar;
 
         Business business = (Business) getItem(position);
 
@@ -81,10 +81,12 @@ public class BusinessAdapter extends BaseAdapter {
 //        searchAddressTextView.setText(business.address1);
 //        searchMilesTextView.setText(business.);
 //        searchDollarSignTextView.setText(business.price);
-        searchNumReviewTextView.setText(business.review_count);
-//        searchRatingBar.setRating(business.rating);
+        searchNumReviewTextView.setText(business.review_count + " reviews");
 
-//        Picasso.with(mContext).load(business.image_url).placeholder(R.mipmap.ic_launcher).into(searchImg);
+        float floatRating = Float.valueOf(business.rating);
+        searchRatingBar.setRating(floatRating);
+
+        Picasso.with(mContext).load(business.image_url).placeholder(R.mipmap.ic_launcher).into(searchImg);
 
         return convertView;
     }

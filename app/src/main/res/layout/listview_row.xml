@@ -9,8 +9,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="0dp"
-        android:layout_margin="8dp">
+        android:padding="0dp">
 
         <!-- Img -->
         <ImageView
@@ -34,13 +33,15 @@
         <RatingBar
             android:id="@+id/searchRatingBar"
             style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
+            android:theme="@style/RatingBar"
             android:layout_height="wrap_content"
             android:layout_below="@+id/searchName"
             android:layout_marginStart="13dp"
             android:layout_toEndOf="@+id/searchImg"
             android:numStars="5"
-            android:padding="3dp" />
+            android:padding="3dp"
+            android:stepSize=".5"
+            android:layout_width="85dp" />
 
         <!-- Address -->
         <TextView

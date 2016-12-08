@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -33,6 +34,10 @@ public class SearchController extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Most Reviewed");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         searchTerm = intent.getExtras().getString("searchTerm");
         searchLocation = intent.getExtras().getString("searchLocation");
@@ -85,20 +90,20 @@ public class SearchController extends AppCompatActivity {
         });
 
 
-        bButton = (Button) findViewById(R.id.button);
-
-        bButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SearchController.this, RestaurantActivity.class);
-                intent.putExtra("searchTerm", searchTerm);
-                intent.putExtra("mLatitude", mLatitude);
-                intent.putExtra("mLongitude", mLongitude);
-                intent.putExtra("searchLocation", searchLocation);
-                intent.putExtra("isSurprised", false);
-                startActivity(intent);
-            }
-        });
+//        bButton = (Button) findViewById(R.id.button);
+//
+//        bButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SearchController.this, RestaurantActivity.class);
+//                intent.putExtra("searchTerm", searchTerm);
+//                intent.putExtra("mLatitude", mLatitude);
+//                intent.putExtra("mLongitude", mLongitude);
+//                intent.putExtra("searchLocation", searchLocation);
+//                intent.putExtra("isSurprised", false);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     List<Business> processJson(String jsonStuff) throws JSONException {

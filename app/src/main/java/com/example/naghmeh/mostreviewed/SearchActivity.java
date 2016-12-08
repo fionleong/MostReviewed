@@ -1,5 +1,6 @@
 package com.example.naghmeh.mostreviewed;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -9,7 +10,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -22,6 +25,7 @@ import java.util.List;
 public class SearchActivity extends AppCompatActivity {
 
     private Button bButton;
+    private ListView mListView;
     protected double mLatitude;
     protected double mLongitude;
 
@@ -30,6 +34,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Most Reviewed");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
@@ -56,19 +61,43 @@ public class SearchActivity extends AppCompatActivity {
             }
         }.execute();
 
-        bButton = (Button) findViewById(R.id.button);
+        mListView = (ListView) findViewById(R.id.searchList);
+        final ArrayList<Business> businessList = Business.getRecipesFromFile("data.json", this);
 
-        bButton.setOnClickListener(new View.OnClickListener() {
+        BusinessAdapter adapter = new BusinessAdapter(this, businessList);
+        mListView.setAdapter(adapter);
+
+        final Context context = this;
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SearchActivity.this, RestaurantActivity.class);
-                intent.putExtra("searchTerm", "mexican");
-                intent.putExtra("mLatitude", mLatitude);
-                intent.putExtra("mLongitude", mLongitude);
-                intent.putExtra("isSurprised", true);
-                startActivity(intent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Business selectedBusiness = businessList.get(position);
+
+                Intent detailIntent = new Intent(context, RestaurantActivity.class);
+
+                // All the details passing to RestaurantActivity
+//                detailIntent.putExtra("title", selectedBusiness.title);
+//                detailIntent.putExtra("url", selectedBusiness.instructionUrl);
+
+                startActivity(detailIntent);
             }
+
         });
+//        bButton = (Button) findViewById(R.id.button);
+//
+//        bButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(SearchActivity.this, RestaurantActivity.class);
+//                intent.putExtra("searchTerm", "mexican");
+//                intent.putExtra("mLatitude", mLatitude);
+//                intent.putExtra("mLongitude", mLongitude);
+//                intent.putExtra("isSurprised", true);
+//                startActivity(intent);
+//            }
+//        });
 
     }
 
