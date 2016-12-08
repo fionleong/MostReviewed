@@ -9,11 +9,29 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.RequestBody;
+import okhttp3.Response;
 
 public class homeController extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -24,6 +42,11 @@ public class homeController extends AppCompatActivity implements
     protected double mLongitude;
     private String searchTerm;
     private String searchLocation;
+    private OkHttpClient client;
+    MediaType mediaType;
+    String url = "https://api.yelp.com/oauth2/token";
+    YelpToken token;
+    List<Business> businesses;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +54,32 @@ public class homeController extends AppCompatActivity implements
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_home);
         buildGoogleApiClient();
+        client = new OkHttpClient();
+        mediaType = MediaType.parse("application/x-www-form-urlencoded");
+        post(url, new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i("onFailure", "Something went wrong");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String responseStr = response.body().string();
+                    Log.i("TokenStr", responseStr);
+                    try {
+                        token = tokenJson(responseStr);
+                        Log.i("token",token.access_token);
+                    } catch (JSONException e) {
+                        Collections.emptyList();
+                    }
+                    // Do what you want to do with the response.
+                } else {
+                    Log.i("requestNotSuccesful", "Request  not succesful");
+                    // Request not successful
+                }
+            }
+        });
     }
 
     /**
@@ -162,5 +211,86 @@ public class homeController extends AppCompatActivity implements
         // ...
         Toast.makeText(this, "Connection failed: ConnectionResult.getErrorCode() = \" + result.getErrorCode()", Toast.LENGTH_LONG).show();
         Log.i("onConnectionFailed", "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
+    }
+
+    void get(){
+        get("https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972", new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.i("onFailure", "Something went wrong");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (response.isSuccessful()) {
+                    String responseStr = response.body().string();
+                    Log.i("responseStr", responseStr);
+                    try {
+                        Log.i("try","before");
+                        businesses = processJson(responseStr);
+                        Log.i("business", String.valueOf(businesses.size()));
+                        for (int i = 0; i < businesses.size(); i++) {
+                            Log.i("Business", businesses.get(i).name);
+                        }
+                    } catch (JSONException e) {
+                        Collections.emptyList();
+                    }
+                    // Do what you want to do with the response.
+                } else {
+                    Log.i("requestNotSuccesful", "Request  not succesful");
+                    // Request not successful
+                }
+            }
+        });
+    }
+
+    Call post(String url, Callback callback) {
+        RequestBody body = RequestBody.create(mediaType, "grant_type=client_credentials&client_id=fNujAxN1dz_J8KNL9RgVzQ&client_secret=Ozb9wCtaVtAlUajF573TNE7f3Z038PaCKCNcEfNaqw38cpU7gMLxqHcKxtyWXYow");
+        Request request = new Request.Builder()
+                .url(url)
+                .post(body)
+                .addHeader("bearer", "access_token")
+                .addHeader("content-type", "application/x-www-form-urlencoded")
+                .addHeader("cache-control", "no-cache")
+                .addHeader("postman-token", "3627f452-4512-4983-ffda-96f1316eb6ae")
+                .build();
+
+        Call call = client.newCall(request);
+        call.enqueue(callback);
+        return call;
+    }
+
+    Call get(String url, Callback callback) {
+        Request request = new Request.Builder()
+                .url(url)
+                .get()
+                .addHeader("authorization", "Bearer " + token.access_token)
+                .addHeader("cache-control", "no-cache")
+                .addHeader("postman-token", "6b78b101-5407-cabe-aaa6-df38f2766c71")
+                .build();
+        Call call = client.newCall(request);
+        call.enqueue(callback);
+        return call;
+    }
+
+    YelpToken tokenJson(String jsonStuff) throws JSONException {
+        JSONObject json = new JSONObject(jsonStuff);
+        YelpToken token = new YelpToken(json.optString("access_token"),
+                json.optString("token_type"), json.optString("expires_in"));
+        return token;
+    }
+
+    List<Business> processJson(String jsonStuff) throws JSONException {
+        JSONObject json = new JSONObject(jsonStuff);
+        JSONArray businesses = json.getJSONArray("businesses");
+        ArrayList<Business> businessObjs = new ArrayList<Business>(businesses.length());
+        for (int i = 0; i < businesses.length(); i++) {
+            JSONObject business = businesses.getJSONObject(i);
+            businessObjs.add(new Business(business.optString("name"),
+                    business.optString("rating"), business.optString("review_count"),
+                    business.optString("image_url"), business.optString("display_address"),
+                    business.optString("latitude"), business.optString("longitude")));
+        }
+        return businessObjs;
     }
 }
