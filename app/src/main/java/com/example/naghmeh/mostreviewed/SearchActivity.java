@@ -39,7 +39,7 @@ public class SearchActivity extends AppCompatActivity {
         new AsyncTask<Void, Void, List<Business>>() {
             @Override
             protected List<Business> doInBackground(Void... params) {
-                String businesses = Yelp.getYelp(SearchActivity.this).search("mexican", mLatitude,mLongitude);
+                String businesses = Yelp.getYelp(SearchActivity.this).search("mexican", mLatitude, mLongitude);
                 try {
                     return processJson(businesses);
                 } catch (JSONException e) {

@@ -116,9 +116,9 @@
         android:layout_marginTop="9dp"
         android:layout_weight="0.12"
         android:background="@drawable/rounded_rec"
+        android:text="Use Current Location"
         android:textColor="#000000"
-        android:textCursorDrawable="@color/darkRed"
-        android:text="Use Current Location" />
+        android:textCursorDrawable="@color/darkRed" />
 
     <TextView
         android:id="@+id/locationLabel"
@@ -132,7 +132,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="#000000"
         android:textStyle="bold" />
-
 
 
 </RelativeLayout>

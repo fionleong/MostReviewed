@@ -35,16 +35,16 @@ public class RestaurantActivity extends AppCompatActivity {
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_restaurant);
         Intent intent = getIntent();
-        searchTerm = intent.getExtras().getString("searchTerm");
-        searchLocation = intent.getExtras().getString("searchLocation");
-        mLatitude = intent.getExtras().getDouble("mLatitude");
-        mLongitude = intent.getExtras().getDouble("mLongitude");
-        isSurprised = intent.getExtras().getBoolean("isSurprised");
+//        searchTerm = intent.getExtras().getString("searchTerm");
+//        searchLocation = intent.getExtras().getString("searchLocation");
+//        mLatitude = intent.getExtras().getDouble("mLatitude");
+//        mLongitude = intent.getExtras().getDouble("mLongitude");
+//        isSurprised = intent.getExtras().getBoolean("isSurprised");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        if(isSurprised) useYelpCurrentLocation();
-        else useYelpLocation();
+//        if(isSurprised) useYelpCurrentLocation();
+//        else useYelpLocation();
     }
 
     public void useYelpLocation(){
@@ -65,7 +65,7 @@ public class RestaurantActivity extends AppCompatActivity {
                     if(businesses.get(i).name.equals("Tacorea")) {
                         TextView name = (TextView) findViewById(R.id.restaurantName);
                         name.setText(businesses.get(i).name);
-                        RatingBar rating = (RatingBar) findViewById(R.id.smallRatingBar);
+                        RatingBar rating = (RatingBar) findViewById(R.id.restaurantRatingBar);
                         rating.setNumStars((int)Double.parseDouble(businesses.get(i).rating));
 
                     }
@@ -94,7 +94,7 @@ public class RestaurantActivity extends AppCompatActivity {
                     if(businesses.get(i).name.equals("La Victoria Taqueria")) {
                         TextView name = (TextView) findViewById(R.id.restaurantName);
                         name.setText(businesses.get(i).name);
-                        RatingBar rating = (RatingBar) findViewById(R.id.smallRatingBar);
+                        RatingBar rating = (RatingBar) findViewById(R.id.restaurantRatingBar);
                         rating.setNumStars((int)Double.parseDouble(businesses.get(i).rating));
 
                     }

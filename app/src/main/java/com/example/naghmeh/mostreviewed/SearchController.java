@@ -1,12 +1,15 @@
 package com.example.naghmeh.mostreviewed;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -20,6 +23,7 @@ import java.util.List;
 public class SearchController extends AppCompatActivity {
 
     private Button bButton;
+    private ListView mListView;
     String searchTerm;
     String searchLocation;
     protected double mLatitude;
@@ -34,7 +38,7 @@ public class SearchController extends AppCompatActivity {
         searchLocation = intent.getExtras().getString("searchLocation");
         mLatitude = intent.getExtras().getDouble("mLatitude");
         mLongitude = intent.getExtras().getDouble("mLongitude");
-        Toast.makeText(this, "Welcome " + searchTerm + "!" + searchLocation, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome " + searchTerm + " !" + searchLocation, Toast.LENGTH_SHORT).show();
         new AsyncTask<Void, Void, List<Business>>() {
             @Override
             protected List<Business> doInBackground(Void... params) {
@@ -52,8 +56,35 @@ public class SearchController extends AppCompatActivity {
                     Log.i("Business", businesses.get(i).name);
                 }
 
+
             }
         }.execute();
+        mListView = (ListView) findViewById(R.id.searchList);
+        final ArrayList<Business> businessList = Business.getRecipesFromFile("data.json", this);
+
+        BusinessAdapter adapter = new BusinessAdapter(this, businessList);
+        mListView.setAdapter(adapter);
+
+        final Context context = this;
+        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Business selectedBusiness = businessList.get(position);
+
+                Intent detailIntent = new Intent(context, RestaurantActivity.class);
+
+                // All the details passing to RestaurantActivity
+//                detailIntent.putExtra("title", selectedBusiness.title);
+//                detailIntent.putExtra("url", selectedBusiness.instructionUrl);
+
+                startActivity(detailIntent);
+            }
+
+        });
+
+
         bButton = (Button) findViewById(R.id.button);
 
         bButton.setOnClickListener(new View.OnClickListener() {

@@ -19,7 +19,7 @@
         android:layout_alignParentStart="true">
 
         <RatingBar
-            android:id="@+id/smallRatingBar"
+            android:id="@+id/restaurantRatingBar"
             style="?android:attr/ratingBarStyleIndicator"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:numStars="5" />
 
         <TextView
-            android:id="@+id/miles"
+            android:id="@+id/restaurantMiles"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -36,7 +36,7 @@
             android:text="distance" />
 
         <TextView
-            android:id="@+id/dollarSigns"
+            android:id="@+id/restaurantPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -61,7 +61,7 @@
             android:background="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/address"
+            android:id="@+id/restaurantAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -98,20 +98,20 @@
             android:background="@android:color/darker_gray" />
 
         <TextView
-            android:id="@+id/cuisine"
+            android:id="@+id/restaurantCuisine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/smallRatingBar"
+            android:layout_below="@+id/restaurantRatingBar"
             android:layout_marginTop="6dp"
             android:text="Type of cuisine" />
 
         <TextView
-            android:id="@+id/hours"
+            android:id="@+id/restaurantHours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/cuisine"
+            android:layout_below="@+id/restaurantCuisine"
             android:layout_marginTop="6dp"
             android:text="Business Hours" />
 

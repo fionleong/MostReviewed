@@ -1,12 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-    <ListView
-        android:id="@+id/searchList"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent">
-    </ListView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="0dp"
+        android:layout_margin="8dp">
+
+        <!-- Img -->
+        <ImageView
+            android:id="@+id/searchImg"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            app:srcCompat="@drawable/mryelp" />
+
+        <!-- Name -->
+        <TextView
+            android:id="@+id/searchName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/searchRatingBar"
+            android:layout_toEndOf="@+id/searchImg"
+            android:padding="3dp"
+            android:text="Restaurant Name" />
+
+        <!-- Rating Bar -->
+        <RatingBar
+            android:id="@+id/searchRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/searchName"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/searchImg"
+            android:numStars="5"
+            android:padding="3dp" />
+
+        <!-- Address -->
+        <TextView
+            android:id="@+id/searchAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/searchRatingBar"
+            android:layout_below="@+id/searchRatingBar"
+            android:padding="3dp"
+            android:text="address" />
+
+        <!-- Miles -->
+        <TextView
+            android:id="@+id/searchMiles"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/searchName"
+            android:padding="3dp"
+            android:text="Miles" />
+
+        <!-- Dollar Sign -->
+        <TextView
+            android:id="@+id/searchDollarSign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignRight="@+id/searchRatingBar"
+            android:layout_below="@+id/searchMiles"
+            android:padding="3dp"
+            android:text="dollarSign" />
+
+        <!-- Num Reviews -->
+        <TextView
+            android:id="@+id/searchNumReviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignRight="@+id/searchAddress"
+            android:layout_below="@id/searchDollarSign"
+            android:padding="3dp"
+            android:text="numReviews" />
+
+
+    </RelativeLayout>
 
 </LinearLayout>
