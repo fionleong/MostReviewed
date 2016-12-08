@@ -18,6 +18,7 @@ public class Yelp {
 
     OAuthService service;
     Token accessToken;
+    String token = "zv7Zcivo-VbjKGTd_UA1wzV942gVQ-FCckrUZ5mmOkBpIgrcc4GvhS1NNbjhTrmE3XqHCTbreJJo_gDGCMJB9NAxyhQ9RbW1tiKkbfohne0o7DvUYwF_rLpQ7O1IWHYx";
 
     public static Yelp getYelp(Context context) {
         return new Yelp(context.getString(R.string.consumer_key), context.getString(R.string.consumer_secret),
