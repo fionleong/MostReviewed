@@ -13,7 +13,8 @@ public class Business {
     final String longitude;
 
 
-    public Business(String name, String rating, String review_count, String image_url, String display_address, String latitude, String longitude) {
+    public Business(String name, String rating, String review_count, String image_url,
+                    String display_address, String latitude, String longitude) {
         this.name = name;
         this.rating = rating;
         this.review_count = review_count;
