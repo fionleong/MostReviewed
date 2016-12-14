@@ -223,7 +223,7 @@
             android:text="The first 30 characters of the review" />
 
         <TextView
-            android:id="@+id/numReviews"
+            android:id="@+id/restaurantReviewCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Num of reviews"

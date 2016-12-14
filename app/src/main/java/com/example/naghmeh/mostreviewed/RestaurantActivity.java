@@ -48,7 +48,7 @@ public class RestaurantActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         super.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_restaurant);
-        Intent intent = getIntent();
+
         client = new OkHttpClient();
 //        searchTerm = intent.getExtras().getString("searchTerm");
 //        searchLocation = intent.getExtras().getString("searchLocation");
@@ -57,11 +57,34 @@ public class RestaurantActivity extends AppCompatActivity {
 //        isSurprised = intent.getExtras().getBoolean("isSurprised");
 //        token = intent.getExtras().getString("token");
 //        id = intent.getExtras().getString("id");
-//        String name = intent.getExtras().getString("name");
-//        int rating =(int) intent.getExtras().getDouble("rating");
+
+        // Getting data from intent
+        Intent intent = getIntent();
+        String name = intent.getExtras().getString("name");
+        String rating = intent.getExtras().getString("rating");
+        String price = intent.getExtras().getString("price");
+        String review_count = intent.getExtras().getString("review_count");
+        String url = intent.getExtras().getString("url");
+
+        // Setting views with intent data
+        TextView restaurantName = (TextView) findViewById(R.id.restaurantName);
+        restaurantName.setText(name);
+
+        RatingBar restaurantRating = (RatingBar) findViewById(R.id.restaurantRatingBar);
+        float floatRating = Float.valueOf(rating);
+        restaurantRating.setRating(floatRating);
+
+//        TextView restaurantPrice = (TextView) findViewById(R.id.restaurantPrice);
+//        restaurantPrice.setText(price);
+
+        TextView restaurantReviewCount = (TextView) findViewById(R.id.restaurantReviewCount);
+        restaurantReviewCount.setText(review_count + " reviews");
+
+        // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 //        nameTV = (TextView) findViewById(R.id.restaurantName);
 //        nameTV.setText(name);
 //        ratingRB = (RatingBar) findViewById(R.id.smallRatingBar);

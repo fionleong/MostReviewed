@@ -43,7 +43,8 @@ public class SearchController extends AppCompatActivity {
         searchLocation = intent.getExtras().getString("searchLocation");
         mLatitude = intent.getExtras().getDouble("mLatitude");
         mLongitude = intent.getExtras().getDouble("mLongitude");
-        Toast.makeText(this, "Welcome " + searchTerm + " !" + searchLocation, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Welcome " + searchTerm + "! " + searchLocation, Toast.LENGTH_SHORT).show();
+
         new AsyncTask<Void, Void, List<Business>>() {
             @Override
             protected List<Business> doInBackground(Void... params) {
@@ -56,38 +57,41 @@ public class SearchController extends AppCompatActivity {
             }
 
             @Override
-            protected void onPostExecute(List<Business> businesses) {
+            protected void onPostExecute(final List<Business> businesses) {
                 for (int i = 0; i < businesses.size(); i++) {
-                    Log.i("Business", businesses.get(i).name);
+                    Log.i("Business", businesses.get(i).price);
                 }
 
+                mListView = (ListView) findViewById(R.id.searchList);
+
+                // Displaying all the data from the JSON onto custom listview
+                BusinessAdapter adapter = new BusinessAdapter(SearchController.this, businesses);
+                mListView.setAdapter(adapter);
+
+                mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                        Business selectedBusiness = businesses.get(position);
+
+                        Intent detailIntent = new Intent(SearchController.this, RestaurantActivity.class);
+
+                        // All the details passing to RestaurantActivity
+                        detailIntent.putExtra("name", selectedBusiness.name);
+                        detailIntent.putExtra("rating", selectedBusiness.rating);
+//                        detailIntent.putExtra("price", selectedBusiness.price);
+                        detailIntent.putExtra("review_count", selectedBusiness.review_count);
+                        detailIntent.putExtra("url", selectedBusiness.url);
+
+                        startActivity(detailIntent);
+                    }
+
+                });
 
             }
         }.execute();
-        mListView = (ListView) findViewById(R.id.searchList);
-        final ArrayList<Business> businessList = Business.getRecipesFromFile("data.json", this);
 
-        BusinessAdapter adapter = new BusinessAdapter(this, businessList);
-        mListView.setAdapter(adapter);
-
-        final Context context = this;
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Business selectedBusiness = businessList.get(position);
-
-                Intent detailIntent = new Intent(context, RestaurantActivity.class);
-
-                // All the details passing to RestaurantActivity
-//                detailIntent.putExtra("title", selectedBusiness.title);
-//                detailIntent.putExtra("url", selectedBusiness.instructionUrl);
-
-                startActivity(detailIntent);
-            }
-
-        });
 
 
 //        bButton = (Button) findViewById(R.id.button);
@@ -106,6 +110,7 @@ public class SearchController extends AppCompatActivity {
 //        });
     }
 
+    // String name, String rating, String price, String review_count, String image_url, String url
     List<Business> processJson(String jsonStuff) throws JSONException {
         JSONObject json = new JSONObject(jsonStuff);
         JSONArray businesses = json.getJSONArray("businesses");
@@ -113,9 +118,9 @@ public class SearchController extends AppCompatActivity {
         for (int i = 0; i < businesses.length(); i++) {
             JSONObject business = businesses.getJSONObject(i);
             businessObjs.add(new Business(business.optString("name"),
-                    business.optString("rating"), business.optString("review_count"),
-                    business.optString("image_url"), business.optString("display_address"),
-                    business.optString("latitude"), business.optString("longitude")));
+                    business.optString("rating"), business.optString("price"), business.optString("review_count"),
+                    business.optString("image_url"), business.optString("url"), business.optString("latitude"),
+                    business.optString("longitude")));
         }
         return businessObjs;
     }

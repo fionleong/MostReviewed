@@ -33,7 +33,7 @@ import okhttp3.Response;
 
 public class SearchActivity extends AppCompatActivity {
 
-    private Button bButton;
+    private String searchTerm;
     private ListView mListView;
     protected double mLatitude;
     protected double mLongitude;
@@ -49,16 +49,22 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
+        // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Most Reviewed");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // Intent
         Intent intent = getIntent();
+        searchTerm = intent.getExtras().getString("searchTerm");
         mLatitude = intent.getExtras().getDouble("mLatitude");
         mLongitude = intent.getExtras().getDouble("mLongitude");
+
         client = new OkHttpClient();
         mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        Toast.makeText(this, "Searching for mexican cuisine with lat: " + mLatitude + " and long: " + mLongitude , Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Searching for mexican cuisine with lat: " + mLatitude + " and long: " + mLongitude, Toast.LENGTH_SHORT).show();
 //        This code is for v2
 //        new AsyncTask<Void, Void, List<Business>>() {
 //            @Override
@@ -80,63 +86,51 @@ public class SearchActivity extends AppCompatActivity {
 //            }
 //        }.execute();
 
-        search("mexican", mLatitude, mLongitude);
+        search(searchTerm, mLatitude, mLongitude);
 
         mListView = (ListView) findViewById(R.id.searchList);
-        final ArrayList<Business> businessList = Business.getRecipesFromFile("data.json", this);
 
-        BusinessAdapter adapter = new BusinessAdapter(this, businessList);
+        // Displaying all the data from the JSON onto custom listview
+        BusinessAdapter adapter = new BusinessAdapter(SearchActivity.this, businesses);
         mListView.setAdapter(adapter);
 
-        final Context context = this;
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Business selectedBusiness = businessList.get(position);
+                Business selectedBusiness = businesses.get(position);
 
-                Intent detailIntent = new Intent(context, RestaurantActivity.class);
+                Intent detailIntent = new Intent(SearchActivity.this, RestaurantActivity.class);
 
                 // All the details passing to RestaurantActivity
-//                detailIntent.putExtra("title", selectedBusiness.title);
-//                detailIntent.putExtra("url", selectedBusiness.instructionUrl);
+                detailIntent.putExtra("name", selectedBusiness.name);
+                detailIntent.putExtra("rating", selectedBusiness.rating);
+//                        detailIntent.putExtra("price", selectedBusiness.price);
+                detailIntent.putExtra("review_count", selectedBusiness.review_count);
+                detailIntent.putExtra("url", selectedBusiness.url);
 
                 startActivity(detailIntent);
             }
 
         });
 
-//        bButton = (Button) findViewById(R.id.button);
-//
-//        bButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(SearchActivity.this, RestaurantActivity.class);
-//                intent.putExtra("searchTerm", "mexican");
-//                intent.putExtra("mLatitude", mLatitude);
-//                intent.putExtra("mLongitude", mLongitude);
-//                intent.putExtra("isSurprised", true);
-//                startActivity(intent);
-//            }
-//        });
-
     }
 
-    //Json parser for a list of business it uses a different constructor
-    List<Business> processJson(String jsonStuff) throws JSONException {
-        JSONObject json = new JSONObject(jsonStuff);
-        JSONArray businesses = json.getJSONArray("businesses");
-        ArrayList<Business> businessObjs = new ArrayList<Business>(businesses.length());
-        for (int i = 0; i < businesses.length(); i++) {
-            JSONObject business = businesses.getJSONObject(i);
-            businessObjs.add(new Business(business.optString("name"),
-                    business.optString("rating"), business.optString("review_count"),
-                    business.optString("image_url"), business.optString("display_address"),
-                    business.optString("latitude"), business.optString("longitude")));
-        }
-        return businessObjs;
-    }
+//    //Json parser for a list of business it uses a different constructor
+//    List<Business> processJson(String jsonStuff) throws JSONException {
+//        JSONObject json = new JSONObject(jsonStuff);
+//        JSONArray businesses = json.getJSONArray("businesses");
+//        ArrayList<Business> businessObjs = new ArrayList<Business>(businesses.length());
+//        for (int i = 0; i < businesses.length(); i++) {
+//            JSONObject business = businesses.getJSONObject(i);
+//            businessObjs.add(new Business(business.optString("name"),
+//                    business.optString("rating"), business.optString("review_count"),
+//                    business.optString("image_url"), business.optString("display_address"),
+//                    business.optString("latitude"), business.optString("longitude")));
+//        }
+//        return businessObjs;
+//    }
 
     //Json parser for a list of business it uses a different constructor than the one above
     List<Business> processJson2(String jsonStuff) throws JSONException {
@@ -147,7 +141,7 @@ public class SearchActivity extends AppCompatActivity {
             JSONObject business = businesses.getJSONObject(i);
             businessObjs.add(new Business(business.optString("name"),
                     business.optString("rating"), business.optString("review_count"),
-                    business.optString("image_url"),business.optString("id")));
+                    business.optString("image_url"), business.optString("id")));
         }
         return businessObjs;
     }
@@ -167,9 +161,9 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     //This method searches for businesses with the current users location and given term
-    void search(String term, double latitude, double Longitude){
-        String url = "https://api.yelp.com/v3/businesses/search?term="+term+"&latitude="+String.valueOf(mLatitude)
-                +"&longitude="+String.valueOf(mLongitude);
+    void search(String term, double latitude, double Longitude) {
+        String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + String.valueOf(mLatitude)
+                + "&longitude=" + String.valueOf(mLongitude);
         Log.i("url", url);
         get(url, new Callback() {
             @Override
@@ -183,13 +177,15 @@ public class SearchActivity extends AppCompatActivity {
                     String responseStr = response.body().string();
                     Log.i("responseStr", responseStr);
                     try {
-                        Log.i("try","before");
+                        Log.i("try", "before");
                         businesses = processJson2(responseStr);
                         Log.i("business", String.valueOf(businesses.size()));
-                        for (int i = 0; i < businesses.size(); i++) {
-                            Log.i("Business", businesses.get(i).name);
-                            if(businesses.get(i).name.equals("La Victoria Taqueria")) id = businesses.get(i).id;
-                        }
+//                        for (int i = 0; i < businesses.size(); i++) {
+//                            Log.i("Business", businesses.get(i).name);
+//                            if (businesses.get(i).name.equals("La Victoria Taqueria"))
+//                                id = businesses.get(i).id;
+//                        }
+
                     } catch (JSONException e) {
                         Collections.emptyList();
                     }
@@ -203,8 +199,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     //This method searches for business info with a given id
-    void searchBusiness(String id){
-        String url = "https://api.yelp.com/v3/businesses/"+id;
+    void searchBusiness(String id) {
+        String url = "https://api.yelp.com/v3/businesses/" + id;
         Log.i("url", url);
         get(url, new Callback() {
             @Override
@@ -218,7 +214,7 @@ public class SearchActivity extends AppCompatActivity {
                     String responseStr = response.body().string();
                     Log.i("responseStr", responseStr);
                     try {
-                        Log.i("try","before");
+                        Log.i("try", "before");
                         business = processBJson(responseStr);
                         Log.i("business", business.name);
                     } catch (JSONException e) {
@@ -238,7 +234,7 @@ public class SearchActivity extends AppCompatActivity {
         JSONObject json = new JSONObject(jsonStuff);
         Business business = new Business(json.optString("name"),
                 json.optString("rating"), json.optString("review_count"),
-                json.optString("image_url"),json.optString("id"));
+                json.optString("image_url"), json.optString("id"));
         return business;
     }
 

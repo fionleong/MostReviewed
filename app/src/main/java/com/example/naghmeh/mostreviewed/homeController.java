@@ -287,9 +287,9 @@ public class homeController extends AppCompatActivity implements
         for (int i = 0; i < businesses.length(); i++) {
             JSONObject business = businesses.getJSONObject(i);
             businessObjs.add(new Business(business.optString("name"),
-                    business.optString("rating"), business.optString("review_count"),
-                    business.optString("image_url"), business.optString("display_address"),
-                    business.optString("latitude"), business.optString("longitude")));
+                    business.optString("rating"), business.optString("price"), business.optString("review_count"),
+                    business.optString("image_url"), business.optString("url"), business.optString("latitude"),
+                    business.optString("longitude")));
         }
         return businessObjs;
     }

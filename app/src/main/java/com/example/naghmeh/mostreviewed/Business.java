@@ -137,13 +137,60 @@ import java.util.ArrayList;
 public class Business {
     String name;
     String rating;
+    String price;
     String review_count;
     String image_url;
-    String display_address;
-    String latitude;
-    String longitude;
+    String url; // business's yelp url
     String phone;
     String id;
+    String latitude;
+    String longitude;
+
+    /*
+    *  The ones that are commented out need to reimplement
+    *  getting the JSON file since these are inside an array, etc.
+    */
+
+    //    String cuisine;       // categories: title
+//    String hours;
+//    String miles;
+//
+//    String photo1;
+//    String photo2;
+//    String photo3;
+//
+//    String address1;
+//    String city;
+//    String state;
+//
+
+
+    /*
+    *   This is the complete list for all the info we need in the restaurant view
+    */
+
+//    public Business(String name, String rating, String cuisine, String hours, String miles, String price, String review_count,
+//                    String image_url, String photo1, String photo2, String photo3, String url,
+//                    String address1, String city, String state, String latitude, String longitude) {
+//        this.name = name;
+//        this.rating = rating;
+//        this.cuisine = cuisine;
+//        this.hours = hours;
+//        this.miles = miles;
+//        this.price = price;
+//        this.review_count = review_count;
+//        this.image_url = image_url;
+//        this.photo1 = photo1;
+//        this.photo2 = photo2;
+//        this.photo3 = photo3;
+//        this.url = url;
+//        this.address1 = address1;
+//        this.city = city;
+//        this.state = state;
+//        this.latitude = latitude;
+//        this.longitude = longitude;
+//    }
+
 
     public Business(String name, String rating, String review_count, String image_url, String id) {
         this.name = name;
@@ -153,97 +200,20 @@ public class Business {
         this.id = id;
     }
 
-    public Business(String name, String rating, String review_count, String image_url,
-                    String display_address, String latitude, String longitude) {
+    public Business(String name, String rating, String price, String review_count,
+                    String image_url, String url, String latitude, String longitude) {
         this.name = name;
         this.rating = rating;
+        this.price = price;
         this.review_count = review_count;
         this.image_url = image_url;
-        this.display_address = display_address;
+        this.url = url;
         this.latitude = latitude;
         this.longitude = longitude;
-
     }
 
     public Business() {
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public String getReview_count() {
-        return review_count;
-    }
-
-    public String getImage_url() {
-        return image_url;
-    }
-
-    public String getDisplay_address() {
-        return display_address;
-    }
-
-    public String getLatitude() {
-        return latitude;
-    }
-
-    public String getLongitude() {
-        return longitude;
-    }
-
-    public static ArrayList<Business> getRecipesFromFile(String filename, Context context){
-        final ArrayList<Business> businessList = new ArrayList<>();
-
-        try {
-            // Load data
-            String jsonString = loadJsonFromAsset("data.json", context);
-            Log.i("jsonString: ", jsonString);
-            JSONObject json = new JSONObject(jsonString);
-            Log.i("json: ", json.toString());
-            JSONArray businessArray = json.getJSONArray("businesses");
-
-            // Get Recipe objects from data
-            for(int i = 0; i < businessArray.length(); i++){
-                Business business = new Business();
-                JSONObject busJson = businessArray.getJSONObject(i);
-
-                business.name = busJson.optString("name");
-                business.image_url = busJson.optString("image_url");
-                business.rating = busJson.optString("rating");
-                //business.phone = busJson.optString("phone");
-                business.review_count = busJson.optString("review_count");
-
-                businessList.add(business);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        return businessList;
-    }
-
-    private static String loadJsonFromAsset(String filename, Context context) {
-        String json = null;
-
-        try {
-            InputStream is = context.getAssets().open(filename);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        }
-        catch (java.io.IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-
-        return json;
-    }
 }

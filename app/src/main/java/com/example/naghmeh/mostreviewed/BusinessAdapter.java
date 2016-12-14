@@ -1,5 +1,6 @@
 package com.example.naghmeh.mostreviewed;
 
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Fion on 12/7/2016.
@@ -21,9 +23,9 @@ public class BusinessAdapter extends BaseAdapter {
 
     private Context mContext;
     private LayoutInflater mInflater;
-    private ArrayList<Business> mDataSource;
+    private List<Business> mDataSource;
 
-    public BusinessAdapter(Context context, ArrayList<Business> items) {
+    public BusinessAdapter(Activity context, List<Business> items) {
         mContext = context;
         mDataSource = items;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
