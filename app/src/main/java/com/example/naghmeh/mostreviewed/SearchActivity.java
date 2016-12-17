@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,8 +22,11 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -50,6 +54,8 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
+        businesses = new ArrayList<>();
+
         // Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Most Reviewed");
@@ -61,31 +67,13 @@ public class SearchActivity extends AppCompatActivity {
         searchTerm = intent.getExtras().getString("searchTerm");
         mLatitude = intent.getExtras().getDouble("mLatitude");
         mLongitude = intent.getExtras().getDouble("mLongitude");
+        token = intent.getExtras().getString("token");
 
         client = new OkHttpClient();
         mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        Toast.makeText(this, "Searching for mexican cuisine with lat: " + mLatitude + " and long: " + mLongitude, Toast.LENGTH_SHORT).show();
-//        This code is for v2
-//        new AsyncTask<Void, Void, List<Business>>() {
-//            @Override
-//            protected List<Business> doInBackground(Void... params) {
-//                String businesses = Yelp.getYelp(SearchActivity.this).search("mexican", mLatitude, mLongitude);
-//                try {
-//                    return processJson(businesses);
-//                } catch (JSONException e) {
-//                    return Collections.emptyList();
-//                }
-//            }
-//
-//            @Override
-//            protected void onPostExecute(List<Business> businesses) {
-//                for (int i = 0; i < businesses.size(); i++) {
-//                    Log.i("Business", businesses.get(i).name);
-//                }
-//
-//            }
-//        }.execute();
+        Toast.makeText(this, "Search Term: " + searchTerm + ", " + mLatitude + " and long: " + mLongitude, Toast.LENGTH_SHORT).show();
 
+        Log.i("SearchActivity:", "SearchTerm: " + searchTerm + ", mLat: " + mLatitude + ", mLog: " + mLongitude);
         search(searchTerm, mLatitude, mLongitude);
 
         mListView = (ListView) findViewById(R.id.searchList);
@@ -115,6 +103,26 @@ public class SearchActivity extends AppCompatActivity {
 
         });
 
+        //        This code is for v2
+//        new AsyncTask<Void, Void, List<Business>>() {
+//            @Override
+//            protected List<Business> doInBackground(Void... params) {
+//                String businesses = Yelp.getYelp(SearchActivity.this).search("mexican", mLatitude, mLongitude);
+//                try {
+//                    return processJson(businesses);
+//                } catch (JSONException e) {
+//                    return Collections.emptyList();
+//                }
+//            }
+//
+//            @Override
+//            protected void onPostExecute(List<Business> businesses) {
+//                for (int i = 0; i < businesses.size(); i++) {
+//                    Log.i("Business", businesses.get(i).name);
+//                }
+//
+//            }
+//        }.execute();
     }
 
 //    //Json parser for a list of business it uses a different constructor
@@ -162,9 +170,10 @@ public class SearchActivity extends AppCompatActivity {
 
     //This method searches for businesses with the current users location and given term
     void search(String term, double latitude, double Longitude) {
-        String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + String.valueOf(mLatitude)
+        String url = "https://api.yelp.com/v3/businesses/search?term=" + searchTerm + "&latitude=" + String.valueOf(mLatitude)
                 + "&longitude=" + String.valueOf(mLongitude);
         Log.i("url", url);
+        Log.i("token: ", "" + token);
         get(url, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -178,7 +187,10 @@ public class SearchActivity extends AppCompatActivity {
                     Log.i("responseStr", responseStr);
                     try {
                         Log.i("try", "before");
-                        businesses = processJson2(responseStr);
+                        List<Business> currentBusinesses = new ArrayList<>();
+                        currentBusinesses = processJson2(responseStr);
+                        Log.i("currentBusiness", String.valueOf(currentBusinesses.size()));
+                        businesses = currentBusinesses;
                         Log.i("business", String.valueOf(businesses.size()));
 //                        for (int i = 0; i < businesses.size(); i++) {
 //                            Log.i("Business", businesses.get(i).name);
@@ -191,7 +203,7 @@ public class SearchActivity extends AppCompatActivity {
                     }
                     // Do what you want to do with the response.
                 } else {
-                    Log.i("requestNotSuccesful", "Request  not succesful");
+                    Log.i("SearchA : search()", "Request  not succesful");
                     // Request not successful
                 }
             }
@@ -215,6 +227,7 @@ public class SearchActivity extends AppCompatActivity {
                     Log.i("responseStr", responseStr);
                     try {
                         Log.i("try", "before");
+
                         business = processBJson(responseStr);
                         Log.i("business", business.name);
                     } catch (JSONException e) {
@@ -222,7 +235,7 @@ public class SearchActivity extends AppCompatActivity {
                     }
                     // Do what you want to do with the response.
                 } else {
-                    Log.i("requestNotSuccesful", "Request  not succesful");
+                    Log.i("SearchA: searchBusiness", "Request  not succesful");
                     // Request not successful
                 }
             }

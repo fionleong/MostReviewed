@@ -46,6 +46,7 @@ public class homeController extends AppCompatActivity implements
     MediaType mediaType;
     String url = "https://api.yelp.com/oauth2/token";
     YelpToken token;
+    String yelp_token;
     List<Business> businesses;
 
     @Override
@@ -105,14 +106,20 @@ public class homeController extends AppCompatActivity implements
         intent.putExtra("searchLocation", searchLocation);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
+        intent.putExtra("token", token.access_token);
         startActivity(intent);
     }
 
+    // For now this checks the Use Current Location with term
     public void surpriseMe(View view) {
-        // Testing if the other pages are working correctly
+        MultiAutoCompleteTextView term = (MultiAutoCompleteTextView) findViewById(R.id.searchTerm);
+        String searchTerm = term.getText().toString();
+
         Intent intent = new Intent(homeController.this, SearchActivity.class);
+        intent.putExtra("searchTerm", searchTerm);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
+        intent.putExtra("token", token.access_token);
         startActivity(intent);
     }
 
@@ -213,36 +220,36 @@ public class homeController extends AppCompatActivity implements
         Log.i("onConnectionFailed", "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
     }
 
-    void get(){
-        get("https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972", new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.i("onFailure", "Something went wrong");
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                if (response.isSuccessful()) {
-                    String responseStr = response.body().string();
-                    Log.i("responseStr", responseStr);
-                    try {
-                        Log.i("try","before");
-                        businesses = processJson(responseStr);
-                        Log.i("business", String.valueOf(businesses.size()));
-                        for (int i = 0; i < businesses.size(); i++) {
-                            Log.i("Business", businesses.get(i).name);
-                        }
-                    } catch (JSONException e) {
-                        Collections.emptyList();
-                    }
-                    // Do what you want to do with the response.
-                } else {
-                    Log.i("requestNotSuccesful", "Request  not succesful");
-                    // Request not successful
-                }
-            }
-        });
-    }
+//    void get(){
+//        get("https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972", new Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.i("onFailure", "Something went wrong");
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) throws IOException {
+//                if (response.isSuccessful()) {
+//                    String responseStr = response.body().string();
+//                    Log.i("responseStr", responseStr);
+//                    try {
+//                        Log.i("try","before");
+//                        businesses = processJson(responseStr);
+//                        Log.i("business", String.valueOf(businesses.size()));
+//                        for (int i = 0; i < businesses.size(); i++) {
+//                            Log.i("Business", businesses.get(i).name);
+//                        }
+//                    } catch (JSONException e) {
+//                        Collections.emptyList();
+//                    }
+//                    // Do what you want to do with the response.
+//                } else {
+//                    Log.i("HomeC : get()", "Request  not succesful");
+//                    // Request not successful
+//                }
+//            }
+//        });
+//    }
 
     Call post(String url, Callback callback) {
         RequestBody body = RequestBody.create(mediaType, "grant_type=client_credentials&client_id=fNujAxN1dz_J8KNL9RgVzQ&client_secret=Ozb9wCtaVtAlUajF573TNE7f3Z038PaCKCNcEfNaqw38cpU7gMLxqHcKxtyWXYow");
