@@ -68,7 +68,7 @@ public class SearchController extends AppCompatActivity {
 
     //This method searches for businesses with the current users location and given term
     private void search(String term, String searchLocation) {
-        String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&location=" + searchLocation;
+        String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&location=" + searchLocation+"&sort_by=review_count";
         Log.i("url", url);
         Log.i("token: ", "" + token);
         get(url, new Callback() {
@@ -119,7 +119,7 @@ public class SearchController extends AppCompatActivity {
     //This method searches for businesses with the current users location and given term
     private void search(String term, double latitude, double Longitude) {
         String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + String.valueOf(latitude)
-                + "&longitude=" + String.valueOf(Longitude);
+                + "&longitude=" + String.valueOf(Longitude)+"&sort_by=review_count";
         Log.i("url", url);
         Log.i("token: ", "" + token);
         get(url, new Callback() {
