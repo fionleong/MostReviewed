@@ -1,12 +1,11 @@
 package com.example.naghmeh.mostreviewed;
-
-/**
- * Created by naghmeh on 12/8/16.
- */
 public class Review {
-    final String rating;
-    final String text;
-    final String time_created;
+    String rating;
+    String image_url;
+    String name;
+    String text;
+    String time_created;
+    String url;
 
     public Review(String rating, String text, String time_created) {
         this.rating = rating;
@@ -14,17 +13,9 @@ public class Review {
         this.time_created = time_created;
     }
 
-    public String getRating() {
-        return rating;
+    public String toString(){
+        return "rating: "+rating+", image_url: "+image_url+", name: "+name
+                +", text: "+text+", time_created: "+time_created+", url: "
+                +url;
     }
-
-    public String getText() {
-        return text;
-    }
-
-    public String getTime_created() {
-        return time_created;
-    }
-
-
 }

@@ -212,7 +212,8 @@
             android:layout_alignStart="@+id/miniRatingBar1"
             android:layout_below="@+id/reviewDate1"
             android:layout_marginTop="15dp"
-            android:text="The first 30 characters of the review" />
+            android:text="The first 30 characters of the review"
+            android:id="@+id/text1" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -220,7 +221,8 @@
             android:layout_alignStart="@+id/miniRatingBar2"
             android:layout_below="@+id/miniRatingBar2"
             android:layout_marginTop="11dp"
-            android:text="The first 30 characters of the review" />
+            android:text="The first 30 characters of the review"
+            android:id="@+id/text2" />
 
         <TextView
             android:id="@+id/restaurantReviewCount"

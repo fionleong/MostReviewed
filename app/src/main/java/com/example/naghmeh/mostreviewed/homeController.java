@@ -3,27 +3,24 @@ package com.example.naghmeh.mostreviewed;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.location.Location;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Random;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -36,18 +33,14 @@ import okhttp3.Response;
 public class homeController extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
     private static final int REQUEST_MULTIPLE_LOCATION = 0;
+    private static final String URL = "https://api.yelp.com/oauth2/token";
     protected GoogleApiClient mGoogleApiClient;
     protected Location mLastLocation;
     protected double mLatitude;
     protected double mLongitude;
-    private String searchTerm;
-    private String searchLocation;
     private OkHttpClient client;
-    MediaType mediaType;
-    String url = "https://api.yelp.com/oauth2/token";
-    YelpToken token;
-    String yelp_token;
-    List<Business> businesses;
+    private MediaType mediaType;
+    private YelpToken token;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +50,11 @@ public class homeController extends AppCompatActivity implements
         buildGoogleApiClient();
         client = new OkHttpClient();
         mediaType = MediaType.parse("application/x-www-form-urlencoded");
-        post(url, new Callback() {
+        post(URL, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.i("onFailure", "Something went wrong");
+                Log.i("onFailure", "Something went wrong getting Yelp's token");
             }
-
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
@@ -74,52 +66,44 @@ public class homeController extends AppCompatActivity implements
                     } catch (JSONException e) {
                         Collections.emptyList();
                     }
-                    // Do what you want to do with the response.
                 } else {
-                    Log.i("requestNotSuccesful", "Request  not succesful");
-                    // Request not successful
+                    Log.i("requestNotSuccessful", "Request  not successful");
                 }
             }
         });
     }
 
-    /**
-     * Builds a GoogleApiClient. Uses the addApi() method to request the LocationServices API.
-     */
-    protected synchronized void buildGoogleApiClient() {
-        mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addConnectionCallbacks(this)
-                .addOnConnectionFailedListener(this)
-                .addApi(LocationServices.API)
-                .build();
-    }
-
+    //TODO: Implement the rating to be pass
+    //TODO: Implement Use current location button or option or something
     public void search(View view) {
         MultiAutoCompleteTextView term = (MultiAutoCompleteTextView) findViewById(R.id.searchTerm);
         String searchTerm = term.getText().toString();
-
         MultiAutoCompleteTextView location = (MultiAutoCompleteTextView) findViewById(R.id.searchLocation);
-        searchLocation = location.getText().toString();
-
+        String searchLocation = location.getText().toString();
         Intent intent = new Intent(this, SearchController.class);
         intent.putExtra("searchTerm", searchTerm);
         intent.putExtra("searchLocation", searchLocation);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
         intent.putExtra("token", token.access_token);
+        // Right now it reads the input but it would be nice if we have a button or somthing
+        if(searchLocation.toLowerCase().contains("current")) intent.putExtra("surprise", true);
+        else intent.putExtra("surprise", false);
         startActivity(intent);
     }
 
     // For now this checks the Use Current Location with term
     public void surpriseMe(View view) {
-        MultiAutoCompleteTextView term = (MultiAutoCompleteTextView) findViewById(R.id.searchTerm);
-        String searchTerm = term.getText().toString();
-
-        Intent intent = new Intent(homeController.this, SearchActivity.class);
+        Intent intent = new Intent(homeController.this, SearchController.class);
+        Resources res = getResources();
+        String[] cuisine = res.getStringArray(R.array.cuisine_array);
+        int n = new Random().nextInt(cuisine.length);
+        String searchTerm = cuisine[n];
         intent.putExtra("searchTerm", searchTerm);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
         intent.putExtra("token", token.access_token);
+        intent.putExtra("surprise", true);
         startActivity(intent);
     }
 
@@ -137,22 +121,24 @@ public class homeController extends AppCompatActivity implements
         }
     }
 
-    /**
-     * Runs when a GoogleApiClient object successfully connects.
-     */
+
+    // Builds a GoogleApiClient. Uses the addApi() method to request the LocationServices API.
+    protected synchronized void buildGoogleApiClient() {
+        mGoogleApiClient = new GoogleApiClient.Builder(this)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .addApi(LocationServices.API)
+                .build();
+    }
+
+    // Runs when a GoogleApiClient object successfully connects.
     @Override
     public void onConnected(Bundle connectionHint) {
         if (ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this,
                         android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
             Toast.makeText(this, "Need Permission", Toast.LENGTH_LONG).show();
             Log.i("onConnected", "Need permission");
             Log.i("ACCESS_FINE_LOCATION", String.valueOf(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED));
@@ -171,7 +157,7 @@ public class homeController extends AppCompatActivity implements
             Log.i("mLatitude", String.valueOf(mLatitude));
             Log.i("mLongitude", String.valueOf(mLongitude));
         } else {
-            Toast.makeText(this, "No Connection Detected", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "No Connection Detected. Please enable GPS", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -183,12 +169,9 @@ public class homeController extends AppCompatActivity implements
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-
                 } else {
-
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
                 }
@@ -215,43 +198,13 @@ public class homeController extends AppCompatActivity implements
         // An unresolvable error has occurred and a connection to Google APIs
         // could not be established. Display an error message, or handle
         // the failure silently
-        // ...
         Toast.makeText(this, "Connection failed: ConnectionResult.getErrorCode() = \" + result.getErrorCode()", Toast.LENGTH_LONG).show();
         Log.i("onConnectionFailed", "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
     }
 
-//    void get(){
-//        get("https://api.yelp.com/v3/businesses/search?term=delis&latitude=37.786882&longitude=-122.399972", new Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.i("onFailure", "Something went wrong");
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) throws IOException {
-//                if (response.isSuccessful()) {
-//                    String responseStr = response.body().string();
-//                    Log.i("responseStr", responseStr);
-//                    try {
-//                        Log.i("try","before");
-//                        businesses = processJson(responseStr);
-//                        Log.i("business", String.valueOf(businesses.size()));
-//                        for (int i = 0; i < businesses.size(); i++) {
-//                            Log.i("Business", businesses.get(i).name);
-//                        }
-//                    } catch (JSONException e) {
-//                        Collections.emptyList();
-//                    }
-//                    // Do what you want to do with the response.
-//                } else {
-//                    Log.i("HomeC : get()", "Request  not succesful");
-//                    // Request not successful
-//                }
-//            }
-//        });
-//    }
-
-    Call post(String url, Callback callback) {
+    //This method is to get the Yelp's token
+    //Only needed at the beginning
+    private Call post(String url, Callback callback) {
         RequestBody body = RequestBody.create(mediaType, "grant_type=client_credentials&client_id=fNujAxN1dz_J8KNL9RgVzQ&client_secret=Ozb9wCtaVtAlUajF573TNE7f3Z038PaCKCNcEfNaqw38cpU7gMLxqHcKxtyWXYow");
         Request request = new Request.Builder()
                 .url(url)
@@ -261,43 +214,17 @@ public class homeController extends AppCompatActivity implements
                 .addHeader("cache-control", "no-cache")
                 .addHeader("postman-token", "3627f452-4512-4983-ffda-96f1316eb6ae")
                 .build();
-
         Call call = client.newCall(request);
         call.enqueue(callback);
         return call;
     }
 
-    Call get(String url, Callback callback) {
-        Request request = new Request.Builder()
-                .url(url)
-                .get()
-                .addHeader("authorization", "Bearer " + token.access_token)
-                .addHeader("cache-control", "no-cache")
-                .addHeader("postman-token", "6b78b101-5407-cabe-aaa6-df38f2766c71")
-                .build();
-        Call call = client.newCall(request);
-        call.enqueue(callback);
-        return call;
-    }
-
-    YelpToken tokenJson(String jsonStuff) throws JSONException {
+    //This method parses the JSON after POST request to get the token
+    //Only needed at the beginning, in order to get the token.
+    private YelpToken tokenJson(String jsonStuff) throws JSONException {
         JSONObject json = new JSONObject(jsonStuff);
-        YelpToken token = new YelpToken(json.optString("access_token"),
+        token = new YelpToken(json.optString("access_token"),
                 json.optString("token_type"), json.optString("expires_in"));
         return token;
-    }
-
-    List<Business> processJson(String jsonStuff) throws JSONException {
-        JSONObject json = new JSONObject(jsonStuff);
-        JSONArray businesses = json.getJSONArray("businesses");
-        ArrayList<Business> businessObjs = new ArrayList<Business>(businesses.length());
-        for (int i = 0; i < businesses.length(); i++) {
-            JSONObject business = businesses.getJSONObject(i);
-            businessObjs.add(new Business(business.optString("name"),
-                    business.optString("rating"), business.optString("price"), business.optString("review_count"),
-                    business.optString("image_url"), business.optString("url"), business.optString("latitude"),
-                    business.optString("longitude")));
-        }
-        return businessObjs;
     }
 }

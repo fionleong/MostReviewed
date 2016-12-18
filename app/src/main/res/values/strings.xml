@@ -10,4 +10,17 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
+
+    <string-array name="cuisine_array">
+        <item>mexican</item>
+        <item>japanese</item>
+        <item>indian</item>
+        <item>american</item>
+        <item>chinese</item>
+        <item>thai</item>
+        <item>korean</item>
+        <item>french</item>
+        <item>greek</item>
+        <item>middle eastern</item>
+    </string-array>
 </resources>
