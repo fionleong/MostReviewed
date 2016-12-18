@@ -100,7 +100,7 @@ public class RestaurantActivity extends AppCompatActivity {
                                 restaurantCuisine.setText(business.cuisine);
                                 //TODO: HOURS TODAY
                                 TextView restaurantHours = (TextView) findViewById(R.id.restaurantHours);
-                                if(business.is_closed) restaurantHours.setText("Open");
+                                if(!business.is_closed) restaurantHours.setText("Open");
                                 else restaurantHours.setText("Closed");
                                 ImageView img1 = (ImageView) findViewById(R.id.img1);
                                 ImageView img2 = (ImageView) findViewById(R.id.img2);
