@@ -155,6 +155,5 @@
     <orderEntry type="library" exported="" name="signpost-core-1.2.1.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="junit-4.12" level="project" />
     <orderEntry type="library" exported="" name="auto-value-1.1" level="project" />
-    <orderEntry type="library" exported="" name="android-android-24" level="project" />
   </component>
 </module>

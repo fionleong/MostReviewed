@@ -58,6 +58,7 @@ public class BusinessAdapter extends BaseAdapter {
             holder.searchImg = (ImageView) convertView.findViewById(R.id.searchImg);
             holder.searchNameTextView = (TextView) convertView.findViewById(R.id.searchName);
             holder.searchAddressTextView = (TextView) convertView.findViewById(R.id.searchAddress);
+            holder.searchCityTextView = (TextView) convertView.findViewById(R.id.searchCity);
             holder.searchMilesTextView = (TextView) convertView.findViewById(R.id.searchMiles);
             holder.searchDollarSignTextView = (TextView) convertView.findViewById(R.id.searchDollarSign);
             holder.searchNumReviewTextView = (TextView) convertView.findViewById(R.id.searchNumReviews);
@@ -70,6 +71,7 @@ public class BusinessAdapter extends BaseAdapter {
 
         TextView searchNameTextView = holder.searchNameTextView;
         TextView searchAddressTextView = holder.searchAddressTextView;
+        TextView searchCityTextView = holder.searchCityTextView;
         TextView searchMilesTextView = holder.searchMilesTextView;
         TextView searchDollarSignTextView = holder.searchDollarSignTextView;
         TextView searchNumReviewTextView = holder.searchNumReviewTextView;
@@ -80,7 +82,8 @@ public class BusinessAdapter extends BaseAdapter {
 
 
         searchNameTextView.setText(business.name);
-        searchAddressTextView.setText(business.address1+", "+business.city);
+        searchAddressTextView.setText(business.address1);
+        searchCityTextView.setText(business.city);
         searchMilesTextView.setText(business.getDistance()+" miles");
         searchDollarSignTextView.setText(business.price);
         searchNumReviewTextView.setText(business.review_count + " reviews");
@@ -93,6 +96,7 @@ public class BusinessAdapter extends BaseAdapter {
     private static class ViewHolder {
         public TextView searchNameTextView;
         public TextView searchAddressTextView;
+        public TextView searchCityTextView;
         public TextView searchMilesTextView;
         public TextView searchDollarSignTextView;
         public TextView searchNumReviewTextView;

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_restaurant"
@@ -13,170 +13,184 @@
     tools:context="com.example.naghmeh.mostreviewed.RestaurantActivity"
     tools:showIn="@layout/activity_restaurant">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/row1"
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_alignParentStart="true">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
 
-        <RatingBar
-            android:id="@+id/restaurantRatingBar"
-            style="?android:attr/ratingBarStyleIndicator"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/restaurantName"
-            android:theme="@style/RatingBar"
-            android:numStars="5" />
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/restaurantMiles"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:text="distance" />
+            <TextView
+                android:id="@+id/restaurantName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Restaurant Name"
+                android:textSize="24sp"
+                android:textStyle="normal|bold" />
 
-        <TextView
-            android:id="@+id/restaurantPrice"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="39dp"
-            android:text="dollar signs" />
+        </GridLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RatingBar
+                android:id="@+id/restaurantRatingBar"
+                style="?android:attr/ratingBarStyleIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:numStars="5"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/restaurantPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="7"
+                android:layout_row="0"
+                android:text="dollar signs"
+                android:layout_marginTop="10dp" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/restaurantHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Business Hours" />
+
+            <TextView
+                android:id="@+id/restaurantMiles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="8"
+                android:layout_row="0"
+                android:text="distance" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/row4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/restaurantCuisine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Type of cuisine" />
+
+            <TextView
+                android:id="@+id/restaurantReviewCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="11"
+                android:layout_row="0"
+                android:text="Num of reviews" />
+        </GridLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/row5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <View
             android:id="@+id/divider1"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="120dp"
             android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/row6"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/restaurantAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Address of Restaurant"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="190dp"
             android:background="@android:color/darker_gray" />
 
-        <TextView
-            android:id="@+id/restaurantAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="141dp"
-            android:text="Address of Restaurant"
-            android:textSize="24sp"
-            android:textStyle="normal|bold" />
+    </LinearLayout>
 
-        <View
-            android:id="@+id/divider3"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="330dp"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/restaurantName"
-            android:layout_below="@+id/divider3"
-            android:layout_marginTop="11dp"
-            android:text="Most Recent Reviews"
-            android:textSize="18sp" />
-
-        <View
-            android:id="@+id/divider4"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="375dp"
-            android:background="@android:color/darker_gray" />
-
-        <TextView
-            android:id="@+id/restaurantCuisine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/restaurantRatingBar"
-            android:layout_marginTop="6dp"
-            android:text="Type of cuisine" />
-
-        <TextView
-            android:id="@+id/restaurantHours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/restaurantCuisine"
-            android:layout_marginTop="6dp"
-            android:text="Business Hours" />
-
-        <View
-            android:id="@+id/divider5"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_alignParentTop="false"
-            android:layout_marginTop="450dp"
-            android:background="@android:color/darker_gray" />
-
-        <RatingBar
-            android:id="@+id/miniRatingBar1"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/textView10"
-            android:layout_below="@+id/divider4"
-            android:layout_marginTop="12dp"
-            android:theme="@style/RatingBar"
-            android:numStars="5" />
-
-        <RatingBar
-            android:id="@+id/miniRatingBar2"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/miniRatingBar1"
-            android:layout_below="@+id/divider5"
-            android:layout_marginTop="11dp"
-            android:theme="@style/RatingBar"
-            android:numStars="5" />
-
-        <TextView
-            android:id="@+id/reviewDate1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/miniRatingBar1"
-            android:text="Date of review" />
-
-        <TextView
-            android:id="@+id/reviewDate2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/miniRatingBar2"
-            android:text="Date of review" />
-
-        <TextView
-            android:id="@+id/restaurantName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Restaurant Name"
-            android:textSize="24sp" />
+    <LinearLayout
+        android:id="@+id/row8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/divider2"
-            android:layout_marginTop="18dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -186,7 +200,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_centerVertical="true"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/mryelp" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/mryelp"
+                android:layout_marginRight="10dp" />
 
             <ImageView
                 android:id="@+id/img2"
@@ -194,7 +210,9 @@
                 android:layout_height="100dp"
                 android:layout_alignTop="@+id/img1"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/mryelp" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/mryelp"
+                android:layout_marginRight="10dp" />
 
             <ImageView
                 android:id="@+id/img3"
@@ -203,36 +221,164 @@
                 android:layout_alignTop="@+id/img2"
                 android:layout_toEndOf="@+id/img2"
                 android:layout_weight="1"
+                android:scaleType="centerCrop"
                 app:srcCompat="@drawable/mryelp" />
+
         </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/miniRatingBar1"
-            android:layout_below="@+id/reviewDate1"
-            android:layout_marginTop="15dp"
-            android:text="The first 30 characters of the review"
-            android:id="@+id/text1" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/row9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/textView10"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/miniRatingBar2"
-            android:layout_below="@+id/miniRatingBar2"
-            android:layout_marginTop="11dp"
-            android:text="The first 30 characters of the review"
-            android:id="@+id/text2" />
+            android:text="Most Recent Reviews"
+            android:textSize="20sp"
+            android:textStyle="normal|bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row11"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row12"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RatingBar
+                android:id="@+id/miniRatingBar1"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/reviewDate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="12"
+                android:layout_row="0"
+                android:text="Date of review" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row13"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/restaurantReviewCount"
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Num of reviews"
-            android:layout_alignBaseline="@+id/restaurantHours"
-            android:layout_alignBottom="@+id/restaurantHours"
-            android:layout_alignParentEnd="true" />
+            android:text="The first 30 characters of the review" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
-</RelativeLayout>
+    <LinearLayout
+        android:id="@+id/row14"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <View
+            android:id="@+id/divider5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/darker_gray" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row15"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RatingBar
+                android:id="@+id/miniRatingBar2"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:theme="@style/RatingBar" />
+
+            <TextView
+                android:id="@+id/reviewDate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="12"
+                android:layout_row="0"
+                android:text="Date of review" />
+        </GridLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The first 30 characters of the review" />
+
+    </LinearLayout>
+
+</TableLayout>

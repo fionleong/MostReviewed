@@ -3,336 +3,336 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.3\fd32786786e2adb664d5ecc965da47629dca14ba\commons-codec-1.3.jar"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="fd32786786e2adb664d5ecc965da47629dca14ba">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-codec-1.3_6eae0ec7739cc092733be432d5ecdf3adbf1384d\classes.dex" />
+        sha1="850cf2bc1b7ec128632c37e4d634f2f6fcdf1510">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8ebd0ee09f34b907cb0abcf90640c47de39c1e4a\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_9fd06bed714f4af50edf02aa55f1272a3b298d8e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_a9d8f776f13ffbf87f86c2ee5bfa56b4f36abf21\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.7.2\8b8310381b690e317f5f0574e9b2dd7034778b4c\jackson-core-2.7.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8b8310381b690e317f5f0574e9b2dd7034778b4c">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.7.2_d5b91cb3b67f09743833f6daf9c41074d532064a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="427028c00601ebdf4550fa76218ea74b374a4be7">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_313ea5d13f66676176e7470b9cec246d0c7c1f7e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_aba58c19667b289d669b5893f7ced77fa793d376\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_e7f49078b549e5883d3ef1bb114ad4322f598fa3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_9bf2d31e5eb075857ceb44221c43b7606c61036a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_ac7c6bb2896438d43bcfae646e46cf1dc730d0fb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\se.akerfeldt\okhttp-signpost\1.1.0\544600ae042f8fc113acb612ef30c69144b685d4\okhttp-signpost-1.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="544600ae042f8fc113acb612ef30c69144b685d4">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-signpost-1.1.0_cfce0e1f5ea0050863d76c8384d0e89075bd101a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.7.0\19f42c154ffc689f40a77613bc32caeb17d744e3\jackson-annotations-2.7.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="19f42c154ffc689f40a77613bc32caeb17d744e3">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.7.0_10f2d6bf4f6cee2d509ef85329d2ad9b227b0dc1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.7.2\84ffa765dd258dbab8695963c41308b054f3a1cb\jackson-databind-2.7.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="84ffa765dd258dbab8695963c41308b054f3a1cb">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.7.2_6ae3f8fe3c1a9d7509691fd8720b4b90b6a3b9f7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_b0fe83cca0f72144ce6ce15a6db781f1bd630357\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_3ae24c515a55fa8f363833971e07797a6cd465db\classes.dex" />
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4390c916c1dd9d3fbef537d6a67c3d6b7dfbe6ec\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_0511ab72ae59bc4a19c87941ce6f24035997ac88\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_1ab15b9f642dfc1759da996a023eac195d1c2b68\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_76cad631beec4a73ab330bd7735472e27bd242fb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.yelp.clientlib\yelp-android\2.0.0\891f25cda5cc11278999b1e59259565dbc1e0a11\yelp-android-2.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="891f25cda5cc11278999b1e59259565dbc1e0a11">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\yelp-android-2.0.0_a97228d6277e62a8588a57f552125ecaec9ebaa9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\libs\scribe-1.3.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="8a9f92023995a881e97622f82a2dd36d23dda06c">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\2\scribe-1.3.0_5379205e69a4e6c60ada6cad22ab77e9ac9cc7a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_391dbac4395297c6b0495eafa16e297909b04cba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_e3921e264b63f32d1e8a6aabb9c6c59d0d6f34a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_81c4be7593992ecca9771f5f6fb2091130815d1c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_1edfac0894d4c3fb4d43c9dd5a86bc9c21115830\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_0d0403d69571432c586828debf6cc9c5c138ccc6\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.0\5c06d197fb7fa875ad452f562e3310dd9949d066\retrofit-2.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="5c06d197fb7fa875ad452f562e3310dd9949d066">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0_210250a7ad6b367a38f56271ba1e6fc51804c818\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_02a460f5f632c11b56c5fda789237ae8d395b21a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="de0d30f461ffaf71525c442140010cc3847f5bc6">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_ad4136bd94292ceee0115ef145c7fb0bda6f3a3e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_929669d537106e933a7f5f5095d88fcee60aef80\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\oauth.signpost\signpost-core\1.2.1.2\bf95955dcf3d5a78c201e49b0c336787ea73f161\signpost-core-1.2.1.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="bf95955dcf3d5a78c201e49b0c336787ea73f161">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\signpost-core-1.2.1.2_fb93cddd76748613cce4c747d4b2db481293b52d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.google.auto.value\auto-value\1.1\f6951c141ea3e89c0f8b01da16834880a1ebf162\auto-value-1.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="f6951c141ea3e89c0f8b01da16834880a1ebf162">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\auto-value-1.1_63f336ba240172ca6708fd53877839ca3039e4b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_56fc3eb3e2ae954d4e8a62b6b8b68bb908366e95\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-jackson\2.0.0\9506825ddc5a43b38a3d104db913ff0f4cb2e323\converter-jackson-2.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.2"
-        sha1="9506825ddc5a43b38a3d104db913ff0f4cb2e323">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-jackson-2.0.0_f38227577e1656b4f77f3ca1b79e04a218f1445d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_8624641c3efa3723ef2392fbddac2a60e5833b9a\classes.dex" />
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_6ad713f0b030d435791d21d2261e301fbad11976\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.google.auto.value\auto-value\1.1\f6951c141ea3e89c0f8b01da16834880a1ebf162\auto-value-1.1.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_2429ff58414f7282dbf95e62d190be282217e90a\classes.dex" />
+        sha1="f6951c141ea3e89c0f8b01da16834880a1ebf162">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\auto-value-1.1_27b746ba0768cedda2431f3b56fd364ac5a3ce6f\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2bfa6002c298c51480f3d517eff4fb8ef1b4380c\classes.dex" />
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_b50a84d53c3989ef0052134f36669e843c6dfa40\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\oauth.signpost\signpost-core\1.2.1.2\bf95955dcf3d5a78c201e49b0c336787ea73f161\signpost-core-1.2.1.2.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2c1556771211f46b2276f877650379b697fe0665\classes.dex" />
+        sha1="bf95955dcf3d5a78c201e49b0c336787ea73f161">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\signpost-core-1.2.1.2_6fcd3469932f9ff3978529189453be5cb1c11099\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Wilson\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\commons-codec\commons-codec\1.3\fd32786786e2adb664d5ecc965da47629dca14ba\commons-codec-1.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fd32786786e2adb664d5ecc965da47629dca14ba">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\commons-codec-1.3_8dc2e3ea191abf6d285973967d252ed74455eacf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-databind\2.7.2\84ffa765dd258dbab8695963c41308b054f3a1cb\jackson-databind-2.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="84ffa765dd258dbab8695963c41308b054f3a1cb">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-databind-2.7.2_83c9e7cb8f57a9ece38d06f465db9a80ee052232\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="6ecb7d36c24ca27de37c617c19edeaca679583e5">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2b265dcf04b4999a8b5f905cb835ecf35e69cedb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_4dcc7642685ca91358168401ecdeeb8d85730537\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_4e080e85c8d0cd98dee1f05eb5be0b4bb380677d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-3.2.0_1ee33cf117eb3612fe150ece063dfe9ca07cf747\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_da41c2974b0be54a729be0c3993ff1d5f0229598\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\libs\scribe-1.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8a9f92023995a881e97622f82a2dd36d23dda06c">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\2\scribe-1.3.0_e1c1483d1b3aeb9a034a660e42e0296843f0ef72\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
         jumboMode="true"
         optimize="true"
         revision="24.0.2"
         sha1="98476622f10715998eacf9240d6b479f12c66143">
-        <dex dex="C:\Users\Wilson\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_fb744d88a9f187f60056a5014fdede04273e417e\classes.dex" />
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okio-1.6.0_36c6d59bb4d2d8605eaa553939b1a956d7c2706a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_edc015e868321e05a325fdf666b4cdfc3c113e43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_9d0383ed7bf21e14c72f653883e85b53c7f73810\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_c999b33dc0e339e6c9ca8cf0395fea369d297024\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_cdbbf08a9835a2b65bc34bb267b965b4d4e5e5c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\picasso-2.5.2_7335fc325e861d44430ad51a285e63b5d19d9527\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\converter-jackson\2.0.0\9506825ddc5a43b38a3d104db913ff0f4cb2e323\converter-jackson-2.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9506825ddc5a43b38a3d104db913ff0f4cb2e323">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\converter-jackson-2.0.0_2c6690c7062f3a4b2c46e5be64440a64f69d1475\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_b67d6f076ff4bc19f018254e7514841506bf9b91\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_3a8041634cfbd075fa0d847606add673370baa34\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_5236136e82386415f68d1d16a3fbd7ce3e626ad0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_5fedd1d852168cb25797cb76cfe0f1d405d98f23\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-annotations\2.7.0\19f42c154ffc689f40a77613bc32caeb17d744e3\jackson-annotations-2.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="19f42c154ffc689f40a77613bc32caeb17d744e3">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-annotations-2.7.0_639433b81af1c1b1d48ff325ddaeca9739179e5b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\se.akerfeldt\okhttp-signpost\1.1.0\544600ae042f8fc113acb612ef30c69144b685d4\okhttp-signpost-1.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="544600ae042f8fc113acb612ef30c69144b685d4">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\okhttp-signpost-1.1.0_2b85f880040c6f64af2f1ffd0423ee8fd150201c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_82094b1d0205f25216b441dc836d4dbb1fbd7e83\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_0ac9c3ac1a5b04c585ae324467af6851d217aaba\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_2d7e68f74f9f36282beee9a78c0bec5da3c052d3\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.fasterxml.jackson.core\jackson-core\2.7.2\8b8310381b690e317f5f0574e9b2dd7034778b4c\jackson-core-2.7.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8b8310381b690e317f5f0574e9b2dd7034778b4c">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\jackson-core-2.7.2_e746df5036cb1219a5693362e3d4636c807590a0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_fa2319bb4de8bd0acc67a71788561747ef558b04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_5b191dd95ed80bdf603912ac33e9960c6249aa3e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.yelp.clientlib\yelp-android\2.0.0\891f25cda5cc11278999b1e59259565dbc1e0a11\yelp-android-2.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="891f25cda5cc11278999b1e59259565dbc1e0a11">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\yelp-android-2.0.0_b04d2ddf55ee5e8a0828a5bff6c4d07b018ccc79\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_6643ffe97c4f3d23bc5e960d578db873703bbe3d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\.gradle\caches\modules-2\files-2.1\com.squareup.retrofit2\retrofit\2.0.0\5c06d197fb7fa875ad452f562e3310dd9949d066\retrofit-2.0.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5c06d197fb7fa875ad452f562e3310dd9949d066">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\retrofit-2.0.0_6baa1f8ea3f97fab5bc22a12e5112e44a24a0048\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\Users\Fion\AndroidStudioProjects\MostReviewed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_8c7278dae78620ccd1dac950042411445a2c809a\classes.dex" />
     </item>
 
 </items>
