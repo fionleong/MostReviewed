@@ -39,11 +39,7 @@ public class SearchController extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         businesses = new ArrayList<>();
         client = new OkHttpClient();
-        // Toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Most Reviewed");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         // Intent
         Intent intent = getIntent();
         String searchTerm = intent.getExtras().getString("searchTerm");
@@ -52,6 +48,7 @@ public class SearchController extends AppCompatActivity {
         mLongitude = intent.getExtras().getDouble("mLongitude");
         token = intent.getExtras().getString("token");
         Boolean surprise = intent.getExtras().getBoolean("surprise");
+
         mListView = (ListView) findViewById(R.id.searchList);
         //Searches using location given from previous homeController
         if(!surprise){
@@ -63,6 +60,7 @@ public class SearchController extends AppCompatActivity {
             Toast.makeText(this, "Searching for: " + searchTerm + " with current location", Toast.LENGTH_SHORT).show();
             search(searchTerm, mLatitude, mLongitude);
         }
+
 
     }
 

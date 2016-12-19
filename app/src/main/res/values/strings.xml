@@ -5,22 +5,22 @@
     <string name="token">D8-xxDJUdfWQiQqMlnXj4NYw3QDK8gcC</string>
     <string name="token_secret">t8DsazwnGelDlwlZ_8sQ-E3Samg</string>
 
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Most Reviewed</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="title_activity_search">SearchActivity</string>
-    <string name="title_activity_restaurant">RestaurantActivity</string>
+    <string name="title_activity_search">Most Reviewed</string>
+    <string name="title_activity_restaurant">Most Reviewed</string>
 
     <string-array name="cuisine_array">
-        <item>mexican</item>
-        <item>japanese</item>
-        <item>indian</item>
-        <item>american</item>
-        <item>chinese</item>
-        <item>thai</item>
-        <item>korean</item>
-        <item>french</item>
-        <item>greek</item>
-        <item>middle eastern</item>
+        <item>Mexican</item>
+        <item>Japanese</item>
+        <item>Indian</item>
+        <item>American</item>
+        <item>Chinese</item>
+        <item>Thai</item>
+        <item>Korean</item>
+        <item>French</item>
+        <item>Greek</item>
+        <item>Middle Eastern</item>
     </string-array>
 </resources>

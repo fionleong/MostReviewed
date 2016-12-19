@@ -84,12 +84,16 @@ public class BusinessAdapter extends BaseAdapter {
         searchNameTextView.setText(business.name);
         searchAddressTextView.setText(business.address1);
         searchCityTextView.setText(business.city);
-        searchMilesTextView.setText(business.getDistance()+" miles");
+        searchMilesTextView.setText(business.getDistance() + " miles");
         searchDollarSignTextView.setText(business.price);
         searchNumReviewTextView.setText(business.review_count + " reviews");
         float floatRating = Float.valueOf(business.rating);
         searchRatingBar.setRating(floatRating);
-        Picasso.with(mContext).load(business.image_url).placeholder(R.mipmap.ic_launcher).into(searchImg);
+        if (business.image_url.length() == 0) {
+            searchImg.setImageResource(R.drawable.mryelp);
+        } else {
+            Picasso.with(mContext).load(business.image_url).placeholder(R.mipmap.ic_launcher).into(searchImg);
+        }
         return convertView;
     }
 

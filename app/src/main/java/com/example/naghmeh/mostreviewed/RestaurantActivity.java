@@ -48,6 +48,8 @@ public class RestaurantActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         client = new OkHttpClient();
         // Getting data from intent
         Intent intent = getIntent();
