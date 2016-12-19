@@ -52,25 +52,27 @@ public class SearchController extends AppCompatActivity {
         mLatitude = intent.getExtras().getDouble("mLatitude");
         mLongitude = intent.getExtras().getDouble("mLongitude");
         token = intent.getExtras().getString("token");
+        float rate = intent.getExtras().getFloat("rating");
         Boolean surprise = intent.getExtras().getBoolean("surprise");
 
         mListView = (ListView) findViewById(R.id.searchList);
+
         //Searches using location given from previous homeController
         if(!surprise){
             Toast.makeText(this, "Searching for: " + searchTerm + " in " + searchLocation, Toast.LENGTH_SHORT).show();
-            search(searchTerm, searchLocation);
+            search(searchTerm, searchLocation, rate);
         }
         //Searches using Current Location
         else{
             Toast.makeText(this, "Searching for: " + searchTerm + " with current location", Toast.LENGTH_SHORT).show();
-            search(searchTerm, mLatitude, mLongitude);
+            search(searchTerm, mLatitude, mLongitude, rate);
         }
 
 
     }
 
     //This method searches for businesses with the current users location and given term
-    private void search(String term, String searchLocation) {
+    private void search(String term, String searchLocation, final float rate) {
         String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&location=" + searchLocation+"&sort_by=review_count";
         Log.i("url", url);
         Log.i("token: ", "" + token);
@@ -86,19 +88,26 @@ public class SearchController extends AppCompatActivity {
                     String responseStr = response.body().string();
                     Log.i("responseStr", responseStr);
                     try {
-                        Log.i("try", "before");
                         businesses = processJson(responseStr);
-                        Log.i("business", String.valueOf(businesses.size()));
+                        final List<Business> filteredBusinesses = new ArrayList<>();
+                        for(int i = 0; i < businesses.size(); i++)
+                        {
+                            if(Float.parseFloat(businesses.get(i).rating) <= rate)
+                            {
+                                filteredBusinesses.add(businesses.get(i));
+                            }
+                        }
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 // Displaying all the data from the JSON onto custom list view
-                                BusinessAdapter adapter = new BusinessAdapter(SearchController.this, businesses);
+                                BusinessAdapter adapter = new BusinessAdapter(SearchController.this, filteredBusinesses);
                                 mListView.setAdapter(adapter);
                                 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        Business selectedBusiness = businesses.get(position);
+                                        Business selectedBusiness = filteredBusinesses.get(position);
                                         Intent detailIntent = new Intent(SearchController.this, RestaurantActivity.class);
                                         // All the details passing to RestaurantActivity
                                         detailIntent.putExtra("id", selectedBusiness.id);
@@ -120,7 +129,7 @@ public class SearchController extends AppCompatActivity {
     }
 
     //This method searches for businesses with the current users location and given term
-    private void search(String term, double latitude, double Longitude) {
+    private void search(String term, double latitude, double Longitude, final float rate) {
         String url = "https://api.yelp.com/v3/businesses/search?term=" + term + "&latitude=" + String.valueOf(latitude)
                 + "&longitude=" + String.valueOf(Longitude)+"&sort_by=review_count";
         Log.i("url", url);
@@ -139,17 +148,27 @@ public class SearchController extends AppCompatActivity {
                     try {
                         Log.i("try", "before");
                         businesses = processJson(responseStr);
-                        Log.i("business", String.valueOf(businesses.size()));
+                        Log.i("size","before"+ String.valueOf(businesses.size()));
+
+                        final List<Business> filteredBusinesses = new ArrayList<>();
+                        for(int i = 0; i < businesses.size(); i++)
+                        {
+                            if(Float.parseFloat(businesses.get(i).rating) <= rate)
+                            {
+                                filteredBusinesses.add(businesses.get(i));
+                            }
+                        }
+
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
                                 // Displaying all the data from the JSON onto custom list view
-                                BusinessAdapter adapter = new BusinessAdapter(SearchController.this, businesses);
+                                BusinessAdapter adapter = new BusinessAdapter(SearchController.this, filteredBusinesses);
                                 mListView.setAdapter(adapter);
                                 mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                                     @Override
                                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                                        Business selectedBusiness = businesses.get(position);
+                                        Business selectedBusiness = filteredBusinesses.get(position);
                                         Intent detailIntent = new Intent(SearchController.this, RestaurantActivity.class);
                                         // All the details passing to RestaurantActivity
                                         detailIntent.putExtra("id", selectedBusiness.id);

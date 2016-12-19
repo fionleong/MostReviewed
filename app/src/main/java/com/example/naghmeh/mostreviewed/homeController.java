@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -101,12 +102,15 @@ public class homeController extends AppCompatActivity implements
         String searchTerm = term.getText().toString();
         AutoCompleteTextView location = (AutoCompleteTextView) findViewById(R.id.searchLocation);
         String searchLocation = location.getText().toString();
+        RatingBar rating = (RatingBar) findViewById(R.id.ratingBar);
+        float rate = rating.getRating();
         Intent intent = new Intent(this, SearchController.class);
         intent.putExtra("searchTerm", searchTerm);
         intent.putExtra("searchLocation", searchLocation);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
         intent.putExtra("token", token.access_token);
+        intent.putExtra("rating", rate);
         // Right now it reads the input but it would be nice if we have a button or somthing
         if (searchLocation.toLowerCase().contains("current")) intent.putExtra("surprise", true);
         else intent.putExtra("surprise", false);
