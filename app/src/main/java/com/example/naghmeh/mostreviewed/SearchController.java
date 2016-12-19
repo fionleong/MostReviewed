@@ -68,7 +68,6 @@ public class SearchController extends AppCompatActivity {
             search(searchTerm, mLatitude, mLongitude, rate);
         }
 
-
     }
 
     //This method searches for businesses with the current users location and given term

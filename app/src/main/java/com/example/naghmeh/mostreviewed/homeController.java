@@ -119,15 +119,20 @@ public class homeController extends AppCompatActivity implements
     // For now this checks the Use Current Location with term
     public void surpriseMe(View view) {
         Intent intent = new Intent(homeController.this, SearchController.class);
+        AutoCompleteTextView location = (AutoCompleteTextView) findViewById(R.id.searchLocation);
+        String searchLocation = location.getText().toString();
         Resources res = getResources();
         String[] cuisine = res.getStringArray(R.array.cuisine_array);
         int n = new Random().nextInt(cuisine.length);
         String searchTerm = cuisine[n];
         intent.putExtra("searchTerm", searchTerm);
+        intent.putExtra("searchLocation", searchLocation);
         intent.putExtra("mLatitude", mLatitude);
         intent.putExtra("mLongitude", mLongitude);
         intent.putExtra("token", token.access_token);
-        intent.putExtra("surprise", true);
+        if (searchLocation.toLowerCase().contains("current")) intent.putExtra("surprise", true);
+        else intent.putExtra("surprise", false);
+//        intent.putExtra("surprise", true);
         startActivity(intent);
     }
 
