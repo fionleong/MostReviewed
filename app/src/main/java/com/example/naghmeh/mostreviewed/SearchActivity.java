@@ -39,6 +39,11 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         businesses = new ArrayList<>();
 
+        // Toolbar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.setTitle("Most Reviewed");
+
         // Intent
         Intent intent = getIntent();
         searchTerm = intent.getExtras().getString("searchTerm");

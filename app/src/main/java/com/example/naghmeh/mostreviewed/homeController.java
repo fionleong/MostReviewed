@@ -10,14 +10,19 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationServices;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Random;
@@ -55,6 +60,7 @@ public class homeController extends AppCompatActivity implements
             public void onFailure(Call call, IOException e) {
                 Log.i("onFailure", "Something went wrong getting Yelp's token");
             }
+
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
@@ -62,7 +68,7 @@ public class homeController extends AppCompatActivity implements
                     Log.i("TokenStr", responseStr);
                     try {
                         token = tokenJson(responseStr);
-                        Log.i("token",token.access_token);
+                        Log.i("token", token.access_token);
                     } catch (JSONException e) {
                         Collections.emptyList();
                     }
@@ -71,14 +77,29 @@ public class homeController extends AppCompatActivity implements
                 }
             }
         });
+
+        Resources res = getResources();
+        String[] auto_complete_cuisine = res.getStringArray(R.array.auto_complete_cuisine);
+        String[] auto_complete_locations = res.getStringArray(R.array.auto_complete_location);
+
+        // Autocomplete text field for searchLocation
+        ArrayAdapter<String> cuisineAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, auto_complete_cuisine);
+        AutoCompleteTextView textView1 = (AutoCompleteTextView) findViewById(R.id.searchTerm);
+        textView1.setAdapter(cuisineAdapter);
+
+        // Autocomplete text field for searchTerm
+        ArrayAdapter<String> locationAdapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, auto_complete_locations);
+        AutoCompleteTextView textView2 = (AutoCompleteTextView) findViewById(R.id.searchLocation);
+        textView2.setAdapter(locationAdapter);
+
     }
 
     //TODO: Implement the rating to be pass
     //TODO: Implement Use current location button or option or something
     public void search(View view) {
-        MultiAutoCompleteTextView term = (MultiAutoCompleteTextView) findViewById(R.id.searchTerm);
+        AutoCompleteTextView term = (AutoCompleteTextView) findViewById(R.id.searchTerm);
         String searchTerm = term.getText().toString();
-        MultiAutoCompleteTextView location = (MultiAutoCompleteTextView) findViewById(R.id.searchLocation);
+        AutoCompleteTextView location = (AutoCompleteTextView) findViewById(R.id.searchLocation);
         String searchLocation = location.getText().toString();
         Intent intent = new Intent(this, SearchController.class);
         intent.putExtra("searchTerm", searchTerm);
@@ -87,7 +108,7 @@ public class homeController extends AppCompatActivity implements
         intent.putExtra("mLongitude", mLongitude);
         intent.putExtra("token", token.access_token);
         // Right now it reads the input but it would be nice if we have a button or somthing
-        if(searchLocation.toLowerCase().contains("current")) intent.putExtra("surprise", true);
+        if (searchLocation.toLowerCase().contains("current")) intent.putExtra("surprise", true);
         else intent.putExtra("surprise", false);
         startActivity(intent);
     }

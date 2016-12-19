@@ -40,6 +40,11 @@ public class SearchController extends AppCompatActivity {
         businesses = new ArrayList<>();
         client = new OkHttpClient();
 
+        // Toolbar
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(myToolbar);
+        myToolbar.setTitle("Most Reviewed");
+
         // Intent
         Intent intent = getIntent();
         String searchTerm = intent.getExtras().getString("searchTerm");

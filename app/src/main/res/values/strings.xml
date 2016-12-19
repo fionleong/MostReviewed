@@ -23,4 +23,54 @@
         <item>Greek</item>
         <item>Middle Eastern</item>
     </string-array>
+
+    <string-array name="auto_complete_cuisine">
+        <item>Mexican</item>
+        <item>Japanese</item>
+        <item>Indian</item>
+        <item>American</item>
+        <item>Chinese</item>
+        <item>Thai</item>
+        <item>Korean</item>
+        <item>French</item>
+        <item>Greek</item>
+        <item>Middle Eastern</item>
+        <item>Sushi</item>
+        <item>Ramen</item>
+        <item>Sandwich</item>
+        <item>Salad</item>
+        <item>Fast Food</item>
+        <item>Dessert</item>
+        <item>Drinks</item>
+        <item>Wings</item>
+    </string-array>
+
+    <string-array name="auto_complete_location">
+        <item>Current Location</item>
+        <item>San Jose, CA</item>
+        <item>San Francisco, CA</item>
+        <item>Santa Clara, CA</item>
+        <item>Cupertino, CA</item>
+        <item>Milpitas, CA</item>
+        <item>Oakland, CA</item>
+        <item>Berkeley, CA</item>
+        <item>Fremont, CA</item>
+        <item>Sunnyvale, CA</item>
+        <item>Palo Alto, CA</item>
+        <item>San Mateo, CA</item>
+        <item>South San Francisco, CA</item>
+        <item>Daly City, CA</item>
+        <item>Hayward, CA</item>
+        <item>Union City, CA</item>
+        <item>Pleasanton, CA</item>
+        <item>Alameda, CA</item>
+        <item>Richmond, CA</item>
+        <item>Concord, CA</item>
+        <item>Walnut Creek, CA</item>
+        <item>Livermore, CA</item>
+        <item>San Ramon, CA</item>
+        <item>San Leandro, CA</item>
+        <item>Campbell, CA</item>
+
+    </string-array>
 </resources>
