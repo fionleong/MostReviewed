@@ -66,10 +66,9 @@ public class homeController extends AppCompatActivity implements
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     String responseStr = response.body().string();
-                    Log.i("TokenStr", responseStr);
+
                     try {
                         token = tokenJson(responseStr);
-                        Log.i("token", token.access_token);
                     } catch (JSONException e) {
                         Collections.emptyList();
                     }
@@ -165,22 +164,16 @@ public class homeController extends AppCompatActivity implements
                         android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // here to request the missing permissions, and then overriding
             Toast.makeText(this, "Need Permission", Toast.LENGTH_LONG).show();
-            Log.i("onConnected", "Need permission");
-            Log.i("ACCESS_FINE_LOCATION", String.valueOf(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED));
-            Log.i("ACCESS_COARSE_LOCATION", String.valueOf(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED));
+
             ActivityCompat.requestPermissions(this,
                     new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION},
                     REQUEST_MULTIPLE_LOCATION);
-            Log.i("ACCESS_FINE_LOCATION", String.valueOf(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED));
-            Log.i("ACCESS_COARSE_LOCATION", String.valueOf(ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED));
         }
         mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
-        Log.i("onConnected", "onConnected");
+
         if (mLastLocation != null) {
             mLatitude = mLastLocation.getLatitude();
             mLongitude = mLastLocation.getLongitude();
-            Log.i("mLatitude", String.valueOf(mLatitude));
-            Log.i("mLongitude", String.valueOf(mLongitude));
         } else {
             Toast.makeText(this, "No Connection Detected. Please enable GPS", Toast.LENGTH_LONG).show();
         }
@@ -214,7 +207,6 @@ public class homeController extends AppCompatActivity implements
         // The connection to Google Play services was lost for some reason. We call connect() to
         // attempt to re-establish the connection.
         Toast.makeText(this, "Connection suspended", Toast.LENGTH_LONG).show();
-        Log.i("onConnectionSuspended", "Connection suspended");
         mGoogleApiClient.connect();
     }
 
@@ -223,8 +215,7 @@ public class homeController extends AppCompatActivity implements
         // An unresolvable error has occurred and a connection to Google APIs
         // could not be established. Display an error message, or handle
         // the failure silently
-        Toast.makeText(this, "Connection failed: ConnectionResult.getErrorCode() = \" + result.getErrorCode()", Toast.LENGTH_LONG).show();
-        Log.i("onConnectionFailed", "Connection failed: ConnectionResult.getErrorCode() = " + result.getErrorCode());
+
     }
 
     //This method is to get the Yelp's token

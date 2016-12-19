@@ -3,15 +3,11 @@ package com.example.naghmeh.mostreviewed;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -57,8 +53,7 @@ public class RestaurantActivity extends AppCompatActivity {
         token = intent.getExtras().getString("token");
         String id = intent.getExtras().getString("id");
         distance = intent.getExtras().getDouble("distance");
-        Log.i("token", token);
-        Log.i("id", id);
+
         searchBusiness(id);
         searchReviews(id);
     }
@@ -66,7 +61,6 @@ public class RestaurantActivity extends AppCompatActivity {
     //This method uses Yelp's business API where id is passing from the previous activity
     void searchBusiness(String id){
         String url = "https://api.yelp.com/v3/businesses/"+id;
-        Log.i("url", url);
         get(url, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -78,7 +72,6 @@ public class RestaurantActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     String responseStr = response.body().string();
-                    Log.i("responseStr", responseStr);
                     try {
                         business = processBJson(responseStr); // where json string is gotten. contains 1 business info
                         runOnUiThread(new Runnable() {
@@ -145,7 +138,6 @@ public class RestaurantActivity extends AppCompatActivity {
 
     //Getting the reviews
     void searchReviews(String id){
-        Log.i("searchReviews","here");
         String url = "https://api.yelp.com/v3/businesses/"+id+"/reviews";
         get(url, new Callback() {
             @Override
@@ -156,10 +148,9 @@ public class RestaurantActivity extends AppCompatActivity {
             @Override
             //This is where we need to add code once the json string is received
             public void onResponse(Call call, Response response) throws IOException {
-                Log.i("searchReviews","onResponse");
+
                 if (response.isSuccessful()) {
                     String responseStr = response.body().string();
-                    Log.i("responseStr", responseStr);
                     try {
                         reviews = processRJson(responseStr); // where json string is gotten. contains 1 business info
                         runOnUiThread(new Runnable() {
@@ -219,13 +210,11 @@ public class RestaurantActivity extends AppCompatActivity {
         business.state = location.optString("state");
         business.country = location.optString("country");
         business.zip_code = location.optString("zip_code");
-        Log.i("business.toString(): ", business.toString());
         return business;
     }
 
     // This parses all the info from reviews API GET request
     private List<Review> processRJson(String jsonStuff) throws JSONException {
-        Log.i("processRJson","start");
         JSONObject json = new JSONObject(jsonStuff);
         JSONArray reviews = json.getJSONArray("reviews");
         ArrayList<Review> reviewsObjs = new ArrayList<>(reviews.length());
@@ -237,7 +226,6 @@ public class RestaurantActivity extends AppCompatActivity {
             JSONObject user = review.getJSONObject("user");
             r.image_url = user.optString("image_url");
             r.name = user.optString("name");
-            Log.i("review: ", r.toString());
             reviewsObjs.add(r);
         }
         return reviewsObjs;
