@@ -2,6 +2,7 @@ package com.example.naghmeh.mostreviewed;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -110,6 +111,30 @@ public class RestaurantActivity extends AppCompatActivity {
                                 Picasso.with(RestaurantActivity.this).load(business.photo1).placeholder(R.mipmap.ic_launcher).into(img1);
                                 Picasso.with(RestaurantActivity.this).load(business.photo2).placeholder(R.mipmap.ic_launcher).into(img2);
                                 Picasso.with(RestaurantActivity.this).load(business.photo3).placeholder(R.mipmap.ic_launcher).into(img3);
+
+                                img1.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View arg0) {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(business.url));
+                                        startActivity(intent);
+                                    }
+                                });
+
+                                img2.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View arg0) {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(business.url));
+                                        startActivity(intent);
+                                    }
+                                });
+
+                                img3.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View arg0) {
+                                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(business.url));
+                                        startActivity(intent);
+                                    }
+                                });
                             }
                         });
                     } catch (JSONException e) {Collections.emptyList();}

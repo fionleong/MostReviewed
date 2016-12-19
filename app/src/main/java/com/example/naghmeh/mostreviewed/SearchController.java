@@ -92,7 +92,7 @@ public class SearchController extends AppCompatActivity {
                         final List<Business> filteredBusinesses = new ArrayList<>();
                         for(int i = 0; i < businesses.size(); i++)
                         {
-                            if(Float.parseFloat(businesses.get(i).rating) <= rate)
+                            if(Float.parseFloat(businesses.get(i).rating) >= rate)
                             {
                                 filteredBusinesses.add(businesses.get(i));
                             }
@@ -153,7 +153,7 @@ public class SearchController extends AppCompatActivity {
                         final List<Business> filteredBusinesses = new ArrayList<>();
                         for(int i = 0; i < businesses.size(); i++)
                         {
-                            if(Float.parseFloat(businesses.get(i).rating) <= rate)
+                            if(Float.parseFloat(businesses.get(i).rating) >= rate)
                             {
                                 filteredBusinesses.add(businesses.get(i));
                             }
